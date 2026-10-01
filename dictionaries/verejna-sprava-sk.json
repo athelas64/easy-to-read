@@ -1,0 +1,925 @@
+{
+  "$schema": "../schema/slovnik.schema.json",
+  "name": "Slovník ťažkých slov verejnej správy",
+  "description": "Spoločný slovník pre orgány verejnej správy na Slovensku: ťažké slová a ich vysvetlenia v ľahko čitateľnom jazyku. Overovací prototyp. Základ tvoria vysvetlenia z webu Úradu komisára pre osoby so zdravotným postihnutím, upravené tak, aby platili pre každý úrad.",
+  "tier": "public",
+  "lang": "sk",
+  "version": "2026-09-30",
+  "updated": "2026-09-30",
+  "licence": {
+    "name": "CC BY-NC-SA 4.0",
+    "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "attribution": "Slovník ťažkých slov verejnej správy, https://github.com/athelas64/etr-slovnik, CC BY-NC-SA 4.0. Základ: Úrad komisára pre osoby so zdravotným postihnutím, www.komisar.sk.",
+    "note": "Licencia je predbežná do rozhodnutia MIRRI. Výskumný projekt zverejnený na účel hodnotenia; pripomienky a žiadosti o stiahnutie obsahu: milan.regec@uniba.sk."
+  },
+  "domains": [
+    "úrad",
+    "právo",
+    "peniaze",
+    "zdravie",
+    "sociálne služby",
+    "práca",
+    "bývanie",
+    "vzdelávanie",
+    "doprava",
+    "digitál",
+    "rodina",
+    "ostatné"
+  ],
+  "entries": [
+    {
+      "id": "komisar-pre-osoby-so-zdravotnym-postihnutim",
+      "term": "komisár pre osoby so zdravotným postihnutím",
+      "forms": [
+        "komisár",
+        "komisárka",
+        "komisára",
+        "komisárovi"
+      ],
+      "easy": "Komisár pre osoby so zdravotným postihnutím chráni práva ľudí so zdravotným postihnutím.\nSkúma, či niekto porušil vaše práva.\nKomisára zriadil zákon v roku 2015.\nKomisár rozhoduje nezávisle.",
+      "domain": "úrad",
+      "note": "Komisár je funkcia zriadená zákonom. Úrad komisára je pracovisko, ktoré mu pomáha. Web úradu ich rozlišuje.",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/o-urade",
+        "fetched": "2026-09-29",
+        "title": "Kto je komisár"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "urad-komisara-pre-osoby-so-zdravotnym-postihnutim",
+      "term": "Úrad komisára pre osoby so zdravotným postihnutím",
+      "forms": [
+        "úrad komisára"
+      ],
+      "easy": "Úrad komisára je pracovisko.\nPomáha komisárovi robiť jeho prácu.\nPracujú tu ľudia, ktorí vybavujú vaše podnety.",
+      "domain": "úrad",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/o-urade",
+        "fetched": "2026-09-29",
+        "title": "Čo je Úrad komisára"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "podnet",
+      "term": "podnet",
+      "forms": [
+        "podnety",
+        "podať podnet",
+        "podanie podnetu"
+      ],
+      "easy": "Podnet je správa o tom, že niekto porušil práva.\nPodnet môže podať každý.\nZa podanie podnetu nič neplatíte.\nPodnet môžete podať aj bez uvedenia mena.",
+      "example": "Napríklad napíšete, že vás úrad nepustil dnu na vozíku.",
+      "domain": "úrad",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/pre-verejnost",
+        "fetched": "2026-09-29",
+        "title": "Ako podať podnet"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64",
+      "updated": "2026-09-29"
+    },
+    {
+      "id": "referat",
+      "term": "referát",
+      "forms": [
+        "referáty"
+      ],
+      "easy": "Referát je oddelenie úradu.\nKaždý referát sa venuje inej oblasti práv.",
+      "example": "Jeden referát rieši peňažné príspevky.\nIný referát rieši zdravotnú starostlivosť.",
+      "domain": "úrad",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/cinnosti-komisara",
+        "fetched": "2026-09-29",
+        "title": "Oddelenia úradu"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "doverny",
+      "term": "dôverný",
+      "forms": [
+        "dôverná",
+        "dôverné",
+        "dôvernosť"
+      ],
+      "easy": "Dôverné znamená, že to ostane medzi vami a úradom.\nNikto iný sa to nedozvie.",
+      "domain": "úrad",
+      "note": "Web hovorí „Váš podnet je dôverný“ a „Pomoc je dôverná“, ale slovo nevysvetľuje. Vysvetlenie je návrh.",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/cinnosti-komisara",
+        "fetched": "2026-09-29",
+        "title": "Potrebujete pomoc?"
+      },
+      "status": "draft",
+      "origin": "human",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "osobne-udaje",
+      "term": "osobné údaje",
+      "forms": [
+        "osobný údaj"
+      ],
+      "easy": "Osobné údaje sú informácie o vás.\nNapríklad meno alebo adresa.",
+      "domain": "právo",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/gdpr",
+        "fetched": "2026-09-29",
+        "title": "Ako chránime vaše údaje"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "gdpr",
+      "term": "GDPR",
+      "forms": [
+        "nariadenie GDPR"
+      ],
+      "easy": "GDPR je pravidlo Európskej únie.\nHovorí, ako sa musia chrániť osobné údaje.",
+      "domain": "právo",
+      "note": "Web skratku používa v štandardnom texte, v ľahkom ju obchádza. Vysvetlenie je návrh.",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/gdpr",
+        "fetched": "2026-09-29"
+      },
+      "status": "draft",
+      "origin": "human",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "dohovor-osn-o-pravach-osob-so-zdravotnym-postihnutim",
+      "term": "Dohovor OSN o právach osôb so zdravotným postihnutím",
+      "forms": [
+        "Dohovor OSN",
+        "dohovor"
+      ],
+      "easy": "Dohovor je medzinárodná zmluva.\nV tomto dohovore je napísané, aké práva máte.\nSlovensko ho musí dodržiavať.\nCRPD je skratka pre tento dohovor.",
+      "same_words": [
+        "CRPD",
+        "Dohovor o právach osôb so zdravotným postihnutím"
+      ],
+      "domain": "právo",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/pre-verejnost",
+        "fetched": "2026-09-29",
+        "title": "Ako vám pomáhame"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64",
+      "updated": "2026-09-29"
+    },
+    {
+      "id": "monitorovanie",
+      "term": "monitorovanie",
+      "forms": [
+        "monitoring",
+        "monitorovacia návšteva",
+        "monitorovacie návštevy"
+      ],
+      "easy": "Monitorovanie znamená, že úrad chodí do zariadení na návštevy.\nZisťuje, či sa tam dodržiavajú práva ľudí so zdravotným postihnutím.\nAk nájde problém, navrhne, čo treba zlepšiť.",
+      "domain": "úrad",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/monitoring",
+        "fetched": "2026-09-29",
+        "title": "Monitorovanie"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "prieskum",
+      "term": "prieskum",
+      "forms": [
+        "prieskumy"
+      ],
+      "easy": "Prieskum znamená, že úrad zisťuje, aký je skutočný stav.\nVýsledky pomáhajú veci zlepšovať.",
+      "example": "Úrad zisťoval, či sa do volebnej miestnosti dostane aj človek na vozíku.",
+      "domain": "úrad",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/prieskumy",
+        "fetched": "2026-09-29",
+        "title": "Prieskumy"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64",
+      "same_words": [
+        "výskum",
+        "výskumy"
+      ],
+      "updated": "2026-09-29"
+    },
+    {
+      "id": "psychiatricke-zariadenie",
+      "term": "psychiatrické zariadenie",
+      "forms": [
+        "psychiatrická nemocnica",
+        "psychiatrická liečebňa",
+        "psychiatria"
+      ],
+      "easy": "Psychiatrické zariadenia sú nemocnice pre ľudí s duševnými ťažkosťami.\nPacienti majú rovnaké práva ako všetci ostatní ľudia.",
+      "domain": "zdravie",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/monitoring-psych",
+        "fetched": "2026-09-29",
+        "title": "Návštevy v psychiatrických zariadeniach"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "zariadenie-socialnych-sluzieb",
+      "term": "zariadenie sociálnych služieb",
+      "forms": [
+        "zariadenia sociálnych služieb",
+        "domov sociálnych služieb",
+        "zariadenie pre seniorov"
+      ],
+      "easy": "V zariadeniach sociálnych služieb žijú ľudia so zdravotným postihnutím a seniori.\nNapríklad domov sociálnych služieb alebo zariadenie pre seniorov.",
+      "same_words": [
+        "DSS"
+      ],
+      "domain": "sociálne služby",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/monitoring-zss",
+        "fetched": "2026-09-29",
+        "title": "Návštevy v domovoch sociálnych služieb"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64",
+      "updated": "2026-09-29"
+    },
+    {
+      "id": "narodny-preventivny-mechanizmus",
+      "term": "Národný preventívny mechanizmus",
+      "easy": "NPM znamená Národný preventívny mechanizmus.\nJe to úloha komisára.\nKomisár navštevuje zariadenia, odkiaľ ľudia nemôžu slobodne odísť.\nNapríklad domovy sociálnych služieb, psychiatrické nemocnice a väznice.\nChce, aby s ľuďmi v týchto zariadeniach nikto zle nezaobchádzal.",
+      "same_words": [
+        "NPM"
+      ],
+      "domain": "právo",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/npm",
+        "fetched": "2026-09-29",
+        "title": "Ako chránime ľudí v zariadeniach"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64",
+      "updated": "2026-09-29"
+    },
+    {
+      "id": "systematicka-navsteva",
+      "term": "systematická návšteva",
+      "forms": [
+        "systematické návštevy",
+        "neohlásená návšteva"
+      ],
+      "easy": "Systematická návšteva je návšteva zariadenia bez ohlásenia vopred.\nPracovníci úradu môžu vojsť do každej miestnosti.\nRozprávajú sa s ľuďmi, ktorí tam žijú, aj so zamestnancami.\nPo návšteve zariadeniu napíšu, čo má zlepšiť.",
+      "domain": "úrad",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/npm",
+        "fetched": "2026-09-29",
+        "title": "Ako naše návštevy vyzerajú"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "zle-zaobchadzanie",
+      "term": "zlé zaobchádzanie",
+      "forms": [
+        "neľudské zaobchádzanie",
+        "ponižujúce zaobchádzanie"
+      ],
+      "easy": "Zlé zaobchádzanie je správanie, ktoré človeka ponižuje.\nJe to aj správanie, ktoré človeku spôsobuje bolesť alebo strach.",
+      "example": "Napríklad zbytočné obmedzovanie pohybu.\nAlebo keď človek nedostane potrebnú zdravotnú starostlivosť.",
+      "domain": "právo",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/npm",
+        "fetched": "2026-09-29",
+        "title": "Čo je zlé zaobchádzanie"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64",
+      "same_words": [
+        "mučenie"
+      ],
+      "updated": "2026-09-29"
+    },
+    {
+      "id": "spis",
+      "term": "spis",
+      "forms": [
+        "spisy"
+      ],
+      "easy": "Spis je záznam o jednom podnete.\nV spise je, čoho sa podnet týkal.\nJe tam aj to, kedy podnet prišiel a ako sa vybavil.",
+      "domain": "úrad",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/podnety",
+        "fetched": "2026-09-29",
+        "title": "Spisy"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "opatrenie",
+      "term": "opatrenie",
+      "forms": [
+        "opatrenia",
+        "opatrenie komisára"
+      ],
+      "easy": "Opatrenie je návrh komisára, čo treba napraviť.\nKomisár ho pošle úradu alebo zariadeniu, ktoré porušilo práva.\nTen musí komisárovi oznámiť, čo s tým urobil.",
+      "domain": "úrad",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/podnety",
+        "fetched": "2026-09-29",
+        "title": "Opatrenia"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "sudne-konanie",
+      "term": "súdne konanie",
+      "forms": [
+        "konanie na súde",
+        "súdne konania"
+      ],
+      "easy": "Súdne konanie je riešenie sporu na súde.\nKomisár môže vstúpiť do konania na súde.\nNa súde chráni práva človeka so zdravotným postihnutím.",
+      "domain": "právo",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/podnety",
+        "fetched": "2026-09-29",
+        "title": "Súdne konania"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "sposobilost-na-pravne-ukony",
+      "term": "spôsobilosť na právne úkony",
+      "forms": [
+        "pozbavenie spôsobilosti na právne úkony",
+        "obmedzenie spôsobilosti na právne úkony",
+        "pozbavený spôsobilosti"
+      ],
+      "easy": "Niektorým ľuďom súd obmedzí rozhodovanie o vlastných veciach.\nZnamená to, že nemôžu sami podpisovať dôležité zmluvy.\nÚrady to volajú obmedzenie spôsobilosti na právne úkony.",
+      "domain": "právo",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/prieskumy",
+        "fetched": "2026-09-29",
+        "title": "Ľudia, ktorým súd obmedzil rozhodovanie"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "posudkova-cinnost",
+      "term": "posudková činnosť",
+      "forms": [
+        "posudzovanie",
+        "posudok",
+        "posudzovanie zdravotného stavu",
+        "integrovaná posudková činnosť"
+      ],
+      "easy": "Posudzovanie je, keď úrad zisťuje, aké máte zdravotné postihnutie.\nPodľa toho rozhodne, na akú pomoc máte nárok.",
+      "domain": "sociálne služby",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/prieskumy",
+        "fetched": "2026-09-29",
+        "title": "Posudzovanie zdravotného stavu"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "volebna-miestnost",
+      "term": "volebná miestnosť",
+      "forms": [
+        "volebné miestnosti"
+      ],
+      "easy": "Volebná miestnosť je miesto, kde odovzdáte hlasovací lístok.",
+      "domain": "ostatné",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/prieskumy",
+        "fetched": "2026-09-29",
+        "title": "Dostanete sa voliť?"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "pristupnost",
+      "term": "prístupnosť",
+      "forms": [
+        "prístupný",
+        "prístupná",
+        "prístupný web",
+        "webová prístupnosť"
+      ],
+      "easy": "Prístupný web znamená, že ho vie použiť každý.\nAj človek, ktorý nevidí, nepočuje alebo ťažko ovláda myš.",
+      "domain": "digitál",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/pristupnost",
+        "fetched": "2026-09-29",
+        "title": "Ako prístupný je tento web"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "vyhlasenie-o-pristupnosti",
+      "term": "vyhlásenie o prístupnosti",
+      "easy": "Vyhlásenie o prístupnosti je dokument o tom, ako prístupný je web.\nKaždý štátny web musí takýto dokument mať.",
+      "domain": "digitál",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/pristupnost",
+        "fetched": "2026-09-29",
+        "title": "Ako prístupný je tento web"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "ministerstvo-investicii-regionalneho-rozvoja-a-informatizacie",
+      "term": "Ministerstvo investícií, regionálneho rozvoja a informatizácie",
+      "forms": [
+        "ministerstvo informatizácie"
+      ],
+      "easy": "Ministerstvo investícií, regionálneho rozvoja a informatizácie je úrad štátu.\nDozerá aj na prístupnosť štátnych webov.\nSkratka je MIRRI.",
+      "same_words": [
+        "MIRRI"
+      ],
+      "domain": "úrad",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/pristupnost",
+        "fetched": "2026-09-29",
+        "title": "Keď vám neodpovieme"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64",
+      "updated": "2026-09-29"
+    },
+    {
+      "id": "publikacia",
+      "term": "publikácia",
+      "forms": [
+        "publikácie"
+      ],
+      "easy": "Publikácia je kniha alebo informačný dokument.",
+      "domain": "ostatné",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/publikacie",
+        "fetched": "2026-09-29",
+        "title": "Publikácie"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "stanovisko",
+      "term": "stanovisko",
+      "forms": [
+        "stanoviská",
+        "stanovisko komisárky"
+      ],
+      "easy": "Stanovisko je písomný názor.\nÚrad ho napíše, keď nie je jasné, čo zákon hovorí.",
+      "domain": "právo",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/stanoviska",
+        "fetched": "2026-09-29",
+        "title": "Stanoviská komisárky"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "sprava-o-cinnosti",
+      "term": "správa o činnosti",
+      "forms": [
+        "správy o činnosti",
+        "výročná správa"
+      ],
+      "easy": "Správa o činnosti je dokument o tom, čo úrad za rok urobil.\nÚrad ju píše každý rok.",
+      "domain": "úrad",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/zverejnovanie",
+        "fetched": "2026-09-29",
+        "title": "Správy o činnosti"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "ziadost-o-informacie",
+      "term": "žiadosť o informácie",
+      "forms": [
+        "sprístupňovanie informácií",
+        "sprístupnenie informácií",
+        "infozákon"
+      ],
+      "easy": "Máte právo požiadať úrad o informácie.\nToto právo vám dáva zákon o slobodnom prístupe k informáciám.\nPožiadať môžete listom, e-mailom alebo osobne.\nÚrad vám musí odpovedať najneskôr do ôsmich pracovných dní.",
+      "same_words": [
+        "infožiadosť"
+      ],
+      "domain": "právo",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/zverejnovanie",
+        "fetched": "2026-09-29",
+        "title": "Ako si vypýtať informácie"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64",
+      "updated": "2026-09-29"
+    },
+    {
+      "id": "vyberove-konanie",
+      "term": "výberové konanie",
+      "forms": [
+        "výberové konania"
+      ],
+      "easy": "Výberové konanie je súťaž o pracovné miesto.\nTakto úrad hľadá nových zamestnancov.",
+      "domain": "práca",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/zverejnovanie",
+        "fetched": "2026-09-29",
+        "title": "Voľné pracovné miesta"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "zmluva",
+      "term": "zmluva",
+      "forms": [
+        "zmluvy"
+      ],
+      "easy": "Zmluva je dohoda o tom, čo kto urobí a za koľko.",
+      "domain": "peniaze",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/zverejnovanie",
+        "fetched": "2026-09-29",
+        "title": "Zmluvy a faktúry"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "faktura",
+      "term": "faktúra",
+      "forms": [
+        "faktúry"
+      ],
+      "easy": "Faktúra je doklad o zaplatení za tovar alebo službu.",
+      "domain": "peniaze",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/zverejnovanie",
+        "fetched": "2026-09-29",
+        "title": "Zmluvy a faktúry"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "podcast",
+      "term": "podcast",
+      "easy": "Podcast je nahrávka, ktorú si môžete vypočuť alebo pozrieť.",
+      "domain": "digitál",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/podcast",
+        "fetched": "2026-09-29",
+        "title": "Podcast Bez bariér"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "mapa-stranok",
+      "term": "mapa stránok",
+      "easy": "Mapa stránok je zoznam všetkých stránok webu.\nPomôže vám nájsť, čo hľadáte.",
+      "domain": "digitál",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/mapa-stranok",
+        "fetched": "2026-09-29",
+        "title": "Mapa stránok"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "bezbarierovy-pristup",
+      "term": "bezbariérový prístup",
+      "forms": [
+        "bezbariérový",
+        "bezbariérová",
+        "bezbariérovosť",
+        "bezbariérová toaleta"
+      ],
+      "easy": "Bezbariérový prístup znamená, že sa do budovy dostanete aj na vozíku.",
+      "domain": "úrad",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/kontakt",
+        "fetched": "2026-09-29",
+        "title": "Bezbariérový prístup"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "uradne-hodiny",
+      "term": "úradné hodiny",
+      "easy": "Úradné hodiny sú čas, keď je úrad otvorený pre ľudí.\nV tomto čase môžete prísť osobne.",
+      "domain": "úrad",
+      "note": "Web slovo používa, ale nevysvetľuje. Vysvetlenie je návrh.",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/kontakt",
+        "fetched": "2026-09-29",
+        "title": "Ako nás kontaktovať"
+      },
+      "status": "draft",
+      "origin": "human",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "anonymizovany",
+      "term": "anonymizovaný",
+      "forms": [
+        "anonymizované",
+        "anonymizácia",
+        "anonymne"
+      ],
+      "easy": "Anonymizované znamená, že mená ľudí tam nie sú uvedené.\nNikto nespozná, o koho ide.",
+      "domain": "právo",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/pribehy",
+        "fetched": "2026-09-29",
+        "title": "Príbehy ľudí"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64",
+      "same_words": [
+        "bez uvedenia mena"
+      ],
+      "updated": "2026-09-29"
+    },
+    {
+      "id": "formular",
+      "term": "formulár",
+      "forms": [
+        "formuláre"
+      ],
+      "easy": "Formulár je tlačivo.\nSú v ňom polia, do ktorých napíšete svoje údaje.",
+      "domain": "ostatné",
+      "note": "Web slovo používa v ľahkom texte bez vysvetlenia. Vysvetlenie je návrh.",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/podnet",
+        "fetched": "2026-09-29",
+        "title": "Napíšte nám, čo sa stalo"
+      },
+      "status": "draft",
+      "origin": "human",
+      "added": "2026-09-29",
+      "contributor": "athelas64",
+      "same_words": [
+        "tlačivo"
+      ],
+      "updated": "2026-09-29"
+    },
+    {
+      "id": "zakon-o-komisarovi",
+      "term": "zákon o komisárovi",
+      "forms": [
+        "zákon č. 176/2015 Z. z.",
+        "zákon č. 176/2015"
+      ],
+      "easy": "Zákon o komisárovi zriadil komisára pre osoby so zdravotným postihnutím.\nPlatí od roku 2015.\nÚradne sa volá zákon číslo 176 z roku 2015.",
+      "domain": "právo",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/o-urade",
+        "fetched": "2026-09-29",
+        "title": "Kto je komisár"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "ludia-so-zdravotnym-postihnutim",
+      "term": "ľudia so zdravotným postihnutím",
+      "forms": [
+        "osoby so zdravotným postihnutím",
+        "osoba so zdravotným postihnutím",
+        "človek so zdravotným postihnutím",
+        "zdravotné postihnutie"
+      ],
+      "easy": "Ľudia so zdravotným postihnutím sú ľudia, ktorí majú dlhodobé telesné, duševné alebo zmyslové postihnutie.\nNapríklad človek, ktorý nevidí, nepočuje alebo chodí na vozíku.",
+      "domain": "úrad",
+      "note": "Štandardný text webu píše „osoby so zdravotným postihnutím“, ľahko čitateľný text „ľudia so zdravotným postihnutím“. V ľahkom texte používajte „ľudia“. Vysvetlenie je návrh.",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/",
+        "fetched": "2026-09-29",
+        "title": "Čo robíme"
+      },
+      "status": "draft",
+      "origin": "human",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "porusenie-prav",
+      "term": "porušenie práv",
+      "forms": [
+        "porušenie práva",
+        "porušil práva",
+        "porušovanie práv"
+      ],
+      "easy": "Porušenie práv je, keď s vami niekto zaobchádza nespravodlivo.\nAlebo keď vám nedá to, na čo máte právo.",
+      "domain": "právo",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/",
+        "fetched": "2026-09-29",
+        "title": "Čo robíme"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "z-vlastnej-iniciativy",
+      "term": "z vlastnej iniciatívy",
+      "forms": [
+        "z vlastného podnetu"
+      ],
+      "easy": "Z vlastnej iniciatívy znamená sám od seba.\nKomisár môže vec preskúmať aj sám od seba, bez podnetu.",
+      "domain": "právo",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/o-urade",
+        "fetched": "2026-09-29",
+        "title": "Čo komisár robí"
+      },
+      "status": "draft",
+      "origin": "adapted",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "hlasovaci-listok",
+      "term": "hlasovací lístok",
+      "forms": [
+        "hlasovacie lístky"
+      ],
+      "easy": "Hlasovací lístok je papier, na ktorom pri voľbách označíte, koho volíte.",
+      "domain": "ostatné",
+      "note": "Vysvetlenie je návrh.",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/prieskumy",
+        "fetched": "2026-09-29",
+        "title": "Dostanete sa voliť?"
+      },
+      "status": "draft",
+      "origin": "human",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    },
+    {
+      "id": "tlmocnik",
+      "term": "tlmočník",
+      "forms": [
+        "tlmočníčka",
+        "tlmočenie"
+      ],
+      "easy": "Tlmočník je človek, ktorý prekladá, čo kto hovorí.\nNapríklad do posunkového jazyka.",
+      "domain": "ostatné",
+      "note": "Vysvetlenie je návrh.",
+      "source": {
+        "name": "Úrad komisára pre osoby so zdravotným postihnutím",
+        "url": "https://www.komisar.sk/rezervacia",
+        "fetched": "2026-09-29",
+        "title": "Dohodnite si stretnutie"
+      },
+      "status": "draft",
+      "origin": "human",
+      "added": "2026-09-29",
+      "contributor": "athelas64"
+    }
+  ]
+}

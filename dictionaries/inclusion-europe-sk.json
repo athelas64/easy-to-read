@@ -1,0 +1,2499 @@
+{
+  "$schema": "../schema/slovnik.schema.json",
+  "name": "Slovník Inclusion Europe po slovensky",
+  "description": "Slovenský strojový preklad slovníka ľahko čitateľných vysvetlení organizácie Inclusion Europe (anglický originál): práva, voľby, európske inštitúcie a život v komunite. Heslá ostávajú v stave draft, kým ich neskontroluje človek. Výskumný prototyp.",
+  "tier": "global",
+  "lang": "sk",
+  "version": "2026-09-30",
+  "updated": "2026-09-30",
+  "licence": {
+    "name": "CC BY-NC-SA 4.0",
+    "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "attribution": "Inclusion Europe, Easy-to-read dictionary, https://www.inclusion-europe.eu/easy-to-read-term/ (© Inclusion Europe). Slovenský preklad: etr-slovnik, https://github.com/athelas64/etr-slovnik, CC BY-NC-SA 4.0.",
+    "note": "Zdroj je citovaný v každom hesle. Výskumný projekt zverejnený na účel hodnotenia; pripomienky a žiadosti o stiahnutie obsahu: milan.regec@uniba.sk."
+  },
+  "domains": [
+    "úrad",
+    "právo",
+    "peniaze",
+    "zdravie",
+    "sociálne služby",
+    "práca",
+    "bývanie",
+    "vzdelávanie",
+    "doprava",
+    "digitál",
+    "rodina",
+    "ostatné"
+  ],
+  "entries": [
+    {
+      "id": "agentura-europskej-unie-pre-zakladne-prava",
+      "term": "Agentúra Európskej únie pre základné práva",
+      "forms": [
+        "Agentúry Európskej únie pre základné práva",
+        "Agentúra pre základné práva",
+        "Agentúry pre základné práva"
+      ],
+      "easy": "Agentúra Európskej únie pre základné práva je organizácia Európskej únie.\nFRA je skratka jej anglického názvu.\nDohliada, aby krajiny dodržiavali práva všetkých ľudí v Európskej únii.",
+      "same_words": [
+        "FRA"
+      ],
+      "domain": "právo",
+      "note": "Anglický výraz: European Union Agency for Fundamental Rights.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#EU%20FRA",
+        "title": "European Union Agency for Fundamental Rights",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "banka",
+      "term": "banka",
+      "forms": [
+        "banky",
+        "v banke",
+        "do banky",
+        "banku"
+      ],
+      "easy": "Banka je miesto, kde si môžete uložiť peniaze a zase ich vybrať.",
+      "domain": "peniaze",
+      "note": "Anglický výraz: Bank. Heslo nemá na stránke zdroja kotvu, adresa vedie na celú stránku.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/",
+        "title": "Bank",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "cermi",
+      "term": "CERMI",
+      "easy": "CERMI je španielsky výbor zástupcov ľudí so zdravotným postihnutím.\nPatrí doň veľa organizácií ľudí s rôznym zdravotným postihnutím.\nCERMI zastupuje takmer 4 milióny ľudí so zdravotným postihnutím v Španielsku.\nPracuje na tom, aby títo ľudia boli súčasťou spoločnosti.",
+      "same_words": [
+        "Španielsky výbor zástupcov osôb so zdravotným postihnutím"
+      ],
+      "domain": "ostatné",
+      "note": "Anglický výraz: CERMI. Španielska organizácia, pre slovenského čitateľa málo potrebná; ponechané, lebo nie je vnútorným orgánom Inclusion Europe. Zdroj uvádza viac ako 3,8 milióna ľudí. Na Slovensku má podobnú úlohu Národná rada občanov so zdravotným postihnutím v SR.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#CERMI",
+        "title": "CERMI",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "charta-zakladnych-prav",
+      "term": "Charta základných práv",
+      "forms": [
+        "Charta základných práv Európskej únie",
+        "Charty základných práv",
+        "Chartou základných práv",
+        "v Charte základných práv"
+      ],
+      "easy": "Charta základných práv je dôležitý text Európskej únie.\nHovorí, aké základné práva má každý človek.\nNapríklad právo na slobodu a právo na vzdelanie.",
+      "domain": "právo",
+      "note": "Anglický výraz: Charter of Fundamental Rights. Upravené pre Slovensko: doplnené, že ide o chartu Európskej únie. Nezamieňať s Listinou základných práv a slobôd, ktorá patrí k slovenskej ústave. Heslo nemá na stránke zdroja kotvu, adresa vedie na celú stránku.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/",
+        "title": "Charter of Fundamental Rights",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "covid-19",
+      "term": "COVID-19",
+      "forms": [
+        "covid",
+        "covidu",
+        "ochorenie COVID-19",
+        "pandémia COVID-19"
+      ],
+      "easy": "COVID-19 je choroba.\nSpôsobuje ju vírus, ktorý sa rozšíril po celom svete.\nVeľa ľudí ochorelo.\nĽudia sa nemohli stretávať, chodiť do práce ani do školy.",
+      "same_words": [
+        "koronavírus"
+      ],
+      "domain": "zdravie",
+      "note": "Anglický výraz: Covid-19. Zdroj píše, že COVID-19 je vírus; presnejšie je to choroba, ktorú vírus spôsobuje. Heslo nemá na stránke zdroja kotvu, adresa vedie na celú stránku.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/",
+        "title": "Covid-19",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "deinstitucionalizacia",
+      "term": "deinštitucionalizácia",
+      "forms": [
+        "deinštitucionalizácie",
+        "deinštitucionalizáciou",
+        "deinštitucionalizácii",
+        "proces deinštitucionalizácie"
+      ],
+      "easy": "Deinštitucionalizácia je pomoc ľuďom, aby sa mohli odsťahovať z ústavov.\nDostanú podporu, aby mohli žiť samostatne medzi ostatnými ľuďmi.",
+      "domain": "sociálne služby",
+      "note": "Anglický výraz: Deinstitutionalisation. V textoch úradov: prechod z inštitucionálnej starostlivosti na komunitnú starostlivosť.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#DI",
+        "title": "Deinstitutionalisation",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "demokracia",
+      "term": "demokracia",
+      "forms": [
+        "demokracie",
+        "v demokracii",
+        "demokraciou"
+      ],
+      "easy": "Demokracia znamená, že všetci ľudia majú rovnaké právo povedať svoj názor.\nVšetci majú rovnaké právo voliť a nechať sa zvoliť.",
+      "domain": "právo",
+      "note": "Anglický výraz: Democracy. Heslo nemá na stránke zdroja kotvu, adresa vedie na celú stránku.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/",
+        "title": "Democracy",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "diplom",
+      "term": "diplom",
+      "forms": [
+        "diplomu",
+        "diplomy",
+        "diplomom",
+        "vysokoškolský diplom"
+      ],
+      "easy": "Diplom je papier, ktorý dostanete, keď dokončíte školu.\nDiplom ukazuje, že ste školu úspešne skončili.\nZnámky máte na vysvedčení.",
+      "domain": "vzdelávanie",
+      "note": "Anglický výraz: Degree. Zdroj hovorí o papieri so známkami. Upravené pre Slovensko: známky sú na vysvedčení, diplom sa dáva najmä po vysokej škole. Degree znamená aj akademický titul. Heslo nemá na stránke zdroja kotvu, adresa vedie na celú stránku.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/",
+        "title": "Degree",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "diskriminacia",
+      "term": "diskriminácia",
+      "forms": [
+        "diskriminácie",
+        "diskrimináciou",
+        "diskriminácii"
+      ],
+      "easy": "Diskriminácia znamená, že s vami zaobchádzajú horšie ako s ostatnými.\nAlebo nedostanete príležitosť, ktorú si zaslúžite.\nJe to diskriminácia, keď sa to deje pre vaše zdravotné postihnutie.\nDiskriminácia sa môže stať aj iným ľuďom.\nNapríklad ľuďom s inou farbou pleti alebo starším ľuďom.",
+      "domain": "právo",
+      "note": "Anglický výraz: Discrimination.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Discrimination",
+        "title": "Discrimination",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "dobrovolnik",
+      "term": "dobrovoľník",
+      "forms": [
+        "dobrovoľníčka",
+        "dobrovoľníci",
+        "dobrovoľníka",
+        "dobrovoľníkov"
+      ],
+      "easy": "Dobrovoľník je človek, ktorý pracuje a pomáha zadarmo.",
+      "example": "Dobrovoľníčka sa v útulku stará o zvieratá.",
+      "domain": "ostatné",
+      "note": "Anglický výraz: Volunteer. Heslo nemá na stránke zdroja kotvu, adresa vedie na celú stránku.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/",
+        "title": "Volunteer",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "dohovor",
+      "term": "dohovor",
+      "forms": [
+        "dohovoru",
+        "dohovory",
+        "v dohovore",
+        "medzinárodný dohovor"
+      ],
+      "easy": "Dohovor je dohoda medzi krajinami alebo organizáciami.\nDohovor môže hovoriť o mnohých témach.\nNapríklad Dohovor o právach osôb so zdravotným postihnutím.",
+      "domain": "právo",
+      "note": "Anglický výraz: Convention. Príklad je doplnený. Heslo nemá na stránke zdroja kotvu, adresa vedie na celú stránku.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/",
+        "title": "Convention",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "dohovor-o-pravach-osob-so-zdravotnym-postihnutim-ie",
+      "term": "Dohovor o právach osôb so zdravotným postihnutím",
+      "forms": [
+        "Dohovoru o právach osôb so zdravotným postihnutím",
+        "Dohovorom o právach osôb so zdravotným postihnutím",
+        "Dohovor OSN",
+        "Dohovoru OSN"
+      ],
+      "easy": "Dohovor o právach osôb so zdravotným postihnutím je dôležitý dokument.\nPripravila ho Organizácia Spojených národov.\nJeho cieľom je, aby všetci dodržiavali práva ľudí so zdravotným postihnutím.\nSlovensko ho prijalo, a preto ho musí dodržiavať.\nCRPD je skratka jeho anglického názvu.",
+      "same_words": [
+        "Dohovor OSN o právach osôb so zdravotným postihnutím",
+        "CRPD",
+        "UN CRPD"
+      ],
+      "domain": "právo",
+      "note": "Anglický výraz: UN CRPD. Anglicky United Nations Convention on the Rights of Persons with Disabilities. Upravené pre Slovensko: doplnená veta o Slovensku, ktoré dohovor ratifikovalo 26. mája 2010. Prijalo namiesto ratifikovalo kvôli zrozumiteľnosti; podpis sám štát nezaväzuje.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#UNCRPD",
+        "title": "UN CRPD",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "europska-expertna-skupina-pre-prechod-z-institucionalnej-starostlivosti-na-komunitnu-starostlivost",
+      "term": "Európska expertná skupina pre prechod z inštitucionálnej starostlivosti na komunitnú starostlivosť",
+      "forms": [
+        "Európska expertná skupina",
+        "Európskej expertnej skupiny",
+        "Európskou expertnou skupinou"
+      ],
+      "easy": "Európska expertná skupina pracuje na tom, aby ľudia mohli odísť z ústavov.\nChce, aby mohli žiť medzi ostatnými ľuďmi.\nHovorí Európskej únii a krajinám v Európe, čo musia urobiť.\nVďaka tomu môžu ľudia žiť samostatne.\nEEG je skratka jej anglického názvu.",
+      "domain": "sociálne služby",
+      "note": "Anglický výraz: EEG. Anglický názov: European Expert Group on the Transition from Institutional to Community-based Care. Skratka EEG úmyselne nie je v same_words: v slovenských textoch skoro vždy znamená lekárske vyšetrenie mozgu.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#EEG",
+        "title": "EEG",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "europska-komisia",
+      "term": "Európska komisia",
+      "forms": [
+        "Európskej komisie",
+        "Európskou komisiou",
+        "v Európskej komisii",
+        "Európsku komisiu"
+      ],
+      "easy": "Európska komisia pracuje s Európskym parlamentom.\nEurópska komisia navrhuje nové zákony.\nEurópsky parlament a Rada Európskej únie o nich potom rozhodujú.\nEurópska komisia tiež dohliada, aby krajiny Európskej únie dodržiavali prijaté zákony.",
+      "same_words": [
+        "EK"
+      ],
+      "domain": "úrad",
+      "note": "Anglický výraz: European Commission. Samotné slovo komisia do tvarov nepatrí: nástroj by ho hlásil aj pri volebnej komisii.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#EC",
+        "title": "European Commission",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "europska-siet-pre-nezavisly-zivot",
+      "term": "Európska sieť pre nezávislý život",
+      "forms": [
+        "Európskej siete pre nezávislý život",
+        "Európskou sieťou pre nezávislý život"
+      ],
+      "easy": "Európska sieť pre nezávislý život je organizácia v Európe.\nPracuje na tom, aby ľudia so zdravotným postihnutím mohli žiť nezávisle.\nENIL je skratka jej anglického názvu.",
+      "same_words": [
+        "ENIL"
+      ],
+      "domain": "sociálne služby",
+      "note": "Anglický výraz: European Network for Independent Living.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#ENIL",
+        "title": "European Network for Independent Living",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "europska-strategia-pre-oblast-zdravotneho-postihnutia",
+      "term": "Európska stratégia pre oblasť zdravotného postihnutia",
+      "forms": [
+        "Európskej stratégie pre oblasť zdravotného postihnutia",
+        "Stratégia v oblasti práv osôb so zdravotným postihnutím",
+        "Stratégie v oblasti práv osôb so zdravotným postihnutím"
+      ],
+      "easy": "Európska stratégia pre oblasť zdravotného postihnutia je dôležitý text.\nHovorí, čo musí Európska únia urobiť pre ľudí so zdravotným postihnutím.\nĽudia so zdravotným postihnutím majú mať rovnaké práva ako ostatní.",
+      "domain": "právo",
+      "note": "Anglický výraz: European Disability Strategy. Stratégia platila na roky 2010 až 2020. Teraz platí Stratégia v oblasti práv osôb so zdravotným postihnutím na roky 2021 až 2030.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#EDS",
+        "title": "European Disability Strategy",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "europska-unia",
+      "term": "Európska únia",
+      "forms": [
+        "Európskej únie",
+        "v Európskej únii",
+        "Európskou úniou",
+        "Európsku úniu"
+      ],
+      "easy": "Európska únia je skupina 27 krajín.\nTýmto krajinám hovoríme členské štáty.\nSpojili sa, aby boli silnejšie v politike a v hospodárstve.\nSlovensko je členským štátom Európskej únie.\nEÚ je skratka pre Európsku úniu.\nEurópska únia robí zákony o mnohých dôležitých veciach.\nNapríklad zákony na ochranu prírody, pre farmárov a na ochranu zákazníkov.\nRobí aj zákony dôležité pre ľudí so zdravotným postihnutím.\nNapríklad Európsky akt o prístupnosti.\nIný zákon dáva ľuďom so zdravotným postihnutím viac práv, keď cestujú.\nEurópska únia dáva členským štátom aj peniaze.\nČasť týchto peňazí je pre ľudí so zdravotným postihnutím.",
+      "same_words": [
+        "EÚ"
+      ],
+      "domain": "úrad",
+      "note": "Anglický výraz: European Union. Upravené pre Slovensko: doplnené, že Slovensko je členským štátom, a veta o skratke EÚ.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#EU",
+        "title": "European Union",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "europske-forum-zdravotneho-postihnutia",
+      "term": "Európske fórum zdravotného postihnutia",
+      "forms": [
+        "Európskeho fóra zdravotného postihnutia",
+        "Európskym fórom zdravotného postihnutia",
+        "v Európskom fóre zdravotného postihnutia"
+      ],
+      "easy": "Európske fórum zdravotného postihnutia je organizácia ľudí so zdravotným postihnutím v Európe.\nEDF je skratka jeho anglického názvu.\nEDF založili ľudia so zdravotným postihnutím v roku 1996.\nEDF chráni práva ľudí so zdravotným postihnutím v Európe.\nSídli v Bruseli v Belgicku.",
+      "same_words": [
+        "EDF"
+      ],
+      "domain": "ostatné",
+      "note": "Anglický výraz: European Disability Forum. Anglický názov: European Disability Forum. Slovenským členom je Národná rada občanov so zdravotným postihnutím v SR; overiť.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#EDF",
+        "title": "European Disability Forum",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "europsky-akt-o-pristupnosti",
+      "term": "Európsky akt o prístupnosti",
+      "forms": [
+        "Európskeho aktu o prístupnosti",
+        "Európskym aktom o prístupnosti",
+        "akt o prístupnosti",
+        "aktu o prístupnosti"
+      ],
+      "easy": "Európsky akt o prístupnosti je zákon Európskej únie.\nMusia ho dodržiavať všetky krajiny Európskej únie.\nHovorí, čo musia firmy urobiť, aby ich výrobky a služby boli prístupné.\nPrístupné znamená, že ich vedia používať aj ľudia so zdravotným postihnutím.\nNapríklad mobilné telefóny, počítače a elektronické knihy.\nAlebo automaty na cestovné lístky a cestovanie autobusom a vlakom.\nZákon pomáha ľuďom so zdravotným postihnutím a starším ľuďom.\nĽudia so zdravotným postihnutím môžu nájsť aj prácu.\nMôžu skúšať výrobky a služby a povedať, či sú prístupné.\nZákon pomáha aj firmám.\nV celej Európskej únii pre ne platí jeden zákon, nie rôzne zákony.",
+      "same_words": [
+        "EAA"
+      ],
+      "domain": "právo",
+      "note": "Anglický výraz: Accessibility Act. Ide o smernicu (EÚ) 2019/882. Upravené pre Slovensko: na Slovensku ju preberá zákon č. 351/2022 Z. z. o prístupnosti výrobkov a služieb pre osoby so zdravotným postihnutím, účinný od 28. júna 2025. Doplnená veta, čo znamená prístupné.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Accessibility%20Act",
+        "title": "Accessibility Act",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "europsky-den-osob-so-zdravotnym-postihnutim",
+      "term": "Európsky deň osôb so zdravotným postihnutím",
+      "forms": [
+        "Európskeho dňa osôb so zdravotným postihnutím",
+        "na Európskom dni osôb so zdravotným postihnutím"
+      ],
+      "easy": "Európsky deň osôb so zdravotným postihnutím je veľké podujatie.\nKoná sa každý rok.\nPríde naň veľa ľudí so zdravotným postihnutím.\nRozprávajú sa s politikmi a s inými dôležitými ľuďmi.\nHovoria napríklad o prístupnosti a o právach ľudí so zdravotným postihnutím.\nPodujatie pripravuje Európska komisia a Európske fórum zdravotného postihnutia.",
+      "domain": "ostatné",
+      "note": "Anglický výraz: European Day of Persons with Disabilities. Konferencia v Bruseli okolo 3. decembra. Nezamieňať s Medzinárodným dňom osôb so zdravotným postihnutím, ktorý vyhlásila OSN.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#EDPD",
+        "title": "European Day of Persons with Disabilities",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "europsky-dohovor-o-ludskych-pravach",
+      "term": "Európsky dohovor o ľudských právach",
+      "forms": [
+        "Európskeho dohovoru o ľudských právach",
+        "Európskym dohovorom o ľudských právach",
+        "Dohovor o ochrane ľudských práv a základných slobôd"
+      ],
+      "easy": "Európsky dohovor o ľudských právach je text o právach, ktoré má každý človek.\nNapríklad právo na život a právo povedať svoj názor.\nMusia ho dodržiavať krajiny, ktoré sú členmi Rady Európy.\nAj Slovensko ho musí dodržiavať.",
+      "domain": "právo",
+      "note": "Anglický výraz: European Convention on Human Rights. Úradný názov: Dohovor o ochrane ľudských práv a základných slobôd. Zdroj píše, že ho dodržiavajú všetky krajiny v Európe; upravené na krajiny Rady Európy a doplnené Slovensko. Heslo nemá na stránke zdroja kotvu, adresa vedie na celú stránku.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/",
+        "title": "European Convention on Human Rights",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "europsky-hospodarsky-a-socialny-vybor",
+      "term": "Európsky hospodársky a sociálny výbor",
+      "forms": [
+        "Európskeho hospodárskeho a sociálneho výboru",
+        "v Európskom hospodárskom a sociálnom výbore",
+        "Európskym hospodárskym a sociálnym výborom"
+      ],
+      "easy": "Európsky hospodársky a sociálny výbor je organizácia Európskej únie.\nPo slovensky sa mu skrátene hovorí EHSV.\nSpája občiansku spoločnosť s Európskou úniou.\nObčianska spoločnosť sú skupiny a organizácie ľudí.\nZastupujú občanov, ktorí majú rôzne záujmy.",
+      "same_words": [
+        "EHSV"
+      ],
+      "domain": "úrad",
+      "note": "Anglický výraz: European Economic and Social Committee. Anglická skratka je EESC, slovenská EHSV.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#EESC",
+        "title": "European Economic and Social Committee",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "europsky-komisar",
+      "term": "európsky komisár",
+      "forms": [
+        "európska komisárka",
+        "európskeho komisára",
+        "európski komisári",
+        "európskych komisárov"
+      ],
+      "easy": "Európsky komisár je člen Európskej komisie.\nMá na starosti jednu oblasť práce, napríklad dopravu.\nVedie veľa ľudí, ktorí v Európskej komisii pracujú.",
+      "same_words": [
+        "eurokomisár",
+        "eurokomisárka"
+      ],
+      "domain": "úrad",
+      "note": "Anglický výraz: Commissioner at the European Commission. Príklad s dopravou je doplnený.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#CEU",
+        "title": "Commissioner at the European Commission",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "europsky-parlament",
+      "term": "Európsky parlament",
+      "forms": [
+        "Európskeho parlamentu",
+        "v Európskom parlamente",
+        "Európskym parlamentom",
+        "do Európskeho parlamentu"
+      ],
+      "easy": "V Európskom parlamente poslanci rozhodujú o dôležitých veciach Európskej únie.\nNapríklad schvaľujú zákony.\nPoslanci zastupujú všetkých ľudí, ktorí žijú v Európskej únii.\nĽudia v Európskej únii volia poslancov každých 5 rokov.\nZo Slovenska je v Európskom parlamente 15 poslancov.",
+      "same_words": [
+        "europarlament",
+        "EP"
+      ],
+      "domain": "úrad",
+      "note": "Anglický výraz: European Parliament. Upravené pre Slovensko: doplnený počet slovenských poslancov v období 2024 až 2029.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#EP",
+        "title": "European Parliament",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "europsky-parlament-osob-so-zdravotnym-postihnutim",
+      "term": "Európsky parlament osôb so zdravotným postihnutím",
+      "forms": [
+        "Európskeho parlamentu osôb so zdravotným postihnutím",
+        "v Európskom parlamente osôb so zdravotným postihnutím"
+      ],
+      "easy": "Európsky parlament osôb so zdravotným postihnutím je veľké stretnutie.\nStretávajú sa na ňom ľudia so zdravotným postihnutím z celej Európy.\nHovoria o tom, čo chcú v živote.\nHovoria aj o problémoch, ktoré majú ako ľudia so zdravotným postihnutím.\nStretnutie je v Bruseli v Belgicku každých 5 rokov.\nNie je to parlament, ktorý robí zákony.",
+      "domain": "ostatné",
+      "note": "Anglický výraz: European Parliament for Persons with Disabilities. V indexe zdroja European Parliament of Persons with Disabilities. Posledná veta je doplnená, aby si ho čitateľ nezamenil s Európskym parlamentom.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#EPPD",
+        "title": "European Parliament for Persons with Disabilities",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "europsky-pilier-socialnych-prav",
+      "term": "Európsky pilier sociálnych práv",
+      "forms": [
+        "Európskeho piliera sociálnych práv",
+        "v Európskom pilieri sociálnych práv",
+        "pilier sociálnych práv"
+      ],
+      "easy": "Európsky pilier sociálnych práv je dôležitý text.\nHovorí, čo chce Európska únia urobiť, aby všetci mali rovnaké príležitosti.\nNapríklad aby sa mohli vzdelávať a vybrať si prácu.\nNikto nemá zostať bokom pre zdravotné postihnutie alebo pre vysoký vek.\nKaždý má mať prístup k dobrým službám.\nTieto pravidlá pomáhajú všetkým ľuďom v Európe byť súčasťou spoločnosti.\nKrajiny Európskej únie tento text podporili.",
+      "domain": "právo",
+      "note": "Anglický výraz: European Pillar of Social Rights.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#EuropeanPillarofSocialRights",
+        "title": "European Pillar of Social Rights",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "europsky-sud-pre-ludske-prava",
+      "term": "Európsky súd pre ľudské práva",
+      "forms": [
+        "Európskeho súdu pre ľudské práva",
+        "Európskym súdom pre ľudské práva",
+        "na Európsky súd pre ľudské práva"
+      ],
+      "easy": "Súd je miesto, kde sudca rozhoduje podľa zákona.\nEurópsky súd pre ľudské práva dohliada, aby európske krajiny dodržiavali ľudské práva.\nĽudské práva sú práva, ktoré má mať každý človek.\nNapríklad právo na život alebo právo povedať svoj názor.",
+      "same_words": [
+        "ESĽP"
+      ],
+      "domain": "právo",
+      "note": "Anglický výraz: European Court of Human Rights. Súd patrí k Rade Európy, sídli v Štrasburgu.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#ECHR",
+        "title": "European Court of Human Rights",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "europsky-zbor-solidarity",
+      "term": "Európsky zbor solidarity",
+      "forms": [
+        "Európskeho zboru solidarity",
+        "v Európskom zbore solidarity",
+        "Európskym zborom solidarity"
+      ],
+      "easy": "Európsky zbor solidarity je projekt Európskej únie pre mladých ľudí.\nSolidarita znamená pomáhať iným ľuďom, aj tým, ktorých nepoznáte.\nEurópsky zbor solidarity mladým ľuďom povie, kde môžu pomáhať.\nNa jeho webovej stránke nájdu, kde treba pomoc.\nNiekedy pomáhajú zadarmo, niekedy za to dostanú aj peniaze.",
+      "domain": "ostatné",
+      "note": "Anglický výraz: European Solidarity Corps.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#EuropeanSolidarityCorps",
+        "title": "European Solidarity Corps",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "financovat-ie",
+      "term": "financovať",
+      "forms": [
+        "financovanie",
+        "financuje",
+        "financovaný",
+        "financované"
+      ],
+      "easy": "Financovať znamená dať peniaze človeku alebo organizácii.\nČlovek alebo organizácia za tieto peniaze pomáha ľuďom alebo niečo pripravuje.",
+      "domain": "peniaze",
+      "note": "Anglický výraz: Fund. Iný význam než v hesle financovať v hurraki-sk.json, ktoré hovorí o platení drahých vecí. Tu ide o peniaze pre organizácie a projekty. Heslo nemá na stránke zdroja kotvu, adresa vedie na celú stránku.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/",
+        "title": "Fund",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "hashtag",
+      "term": "hashtag",
+      "forms": [
+        "hashtagy",
+        "hashtagu",
+        "hashtagom",
+        "hashtagov"
+      ],
+      "easy": "Hashtag je znak mriežka na sociálnych sieťach.\nMriežka vyzerá ako 2 zvislé a 2 vodorovné čiary.\nZa mriežku napíšete slovo.\nKeď na to slovo kliknete, uvidíte všetky správy o tejto téme.",
+      "example": "Napíšete #inklúzia.\nKeď na to kliknete, uvidíte všetky správy o inklúzii.",
+      "domain": "digitál",
+      "note": "Anglický výraz: Hashtag. Znak mriežky nesmie byť v poli easy, preto ho vysvetlenie opisuje; v príklade je ponechaný. Príklad zdroja s kampaňou Hear Our Voices je vynechaný.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Hashtag",
+        "title": "Hashtag",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "hlasovaci-listok-ie",
+      "term": "hlasovací lístok",
+      "forms": [
+        "hlasovacieho lístka",
+        "hlasovacie lístky",
+        "hlasovacích lístkov",
+        "na hlasovacom lístku"
+      ],
+      "easy": "Hlasovací lístok je papier, ktorý dostanete, keď idete voliť.\nNa hlasovacom lístku zakrúžkujete, koho volíte.\nPotom lístok vložíte do obálky a obálku vhodíte do volebnej schránky.",
+      "domain": "úrad",
+      "note": "Anglický výraz: Voting slip. Upravené pre Slovensko: zdroj píše, že na lístok napíšete, koho volíte. Na Slovensku sa krúžkuje a lístok sa vkladá do obálky. Pri voľbách do Národnej rady si volič vyberie lístok jednej strany.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Voting%20Slip",
+        "title": "Voting slip",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "hlasovanie-v-zastupeni",
+      "term": "hlasovanie v zastúpení",
+      "forms": [
+        "hlasovania v zastúpení",
+        "voliť v zastúpení",
+        "voľba v zastúpení"
+      ],
+      "easy": "Hlasovanie v zastúpení znamená, že za vás volí iný človek.\nPodpíšete papier, že za vás môže voliť človek, ktorému dôverujete.\nTen človek zahlasuje za kandidáta alebo stranu, ktorú ste si vybrali vy.\nTak môžete voliť v niektorých krajinách, keď nemôžete ísť voliť sami.\nNa Slovensku takto voliť nemôžete.\nAk nemôžete prísť do volebnej miestnosti, požiadajte o prenosnú volebnú schránku.\nAk nevidíte alebo nemôžete písať, vo volebnej miestnosti vám môže pomôcť iný volič.",
+      "domain": "úrad",
+      "note": "Anglický výraz: Procuration. Anglicky aj proxy voting. Upravené pre Slovensko: slovenský volebný zákon hlasovanie v zastúpení nepozná. Doplnené, čo na Slovensku platí: prenosná volebná schránka zo zdravotných dôvodov a pomoc iného voliča pri úprave hlasovacieho lístka, nie člena komisie. Pred použitím overiť podľa aktuálneho volebného zákona.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Procuration",
+        "title": "Procuration",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "hlavny-kandidat",
+      "term": "hlavný kandidát",
+      "forms": [
+        "hlavného kandidáta",
+        "hlavní kandidáti",
+        "hlavná kandidátka",
+        "hlavných kandidátov"
+      ],
+      "easy": "Hlavný kandidát je človek, ktorého si európska strana vyberie ako najlepšieho kandidáta.\nStrana môže vyhrať voľby do Európskeho parlamentu.\nPotom sa tento človek má stať predsedom Európskej komisie.\nNemecké slovo Spitzenkandidat znamená hlavný kandidát.",
+      "same_words": [
+        "Spitzenkandidat"
+      ],
+      "domain": "úrad",
+      "note": "Anglický výraz: Spitzenkandidat. Zdroj píše, že sa predsedom Európskej komisie stane. Preklad hovorí má stať, lebo to nie je isté, napríklad v roku 2019 sa to nestalo.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Spitzenkandidat",
+        "title": "Spitzenkandidat",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "inclusion-europe",
+      "term": "Inclusion Europe",
+      "easy": "Inclusion Europe je organizácia ľudí s mentálnym znevýhodnením a ich rodín.\nBojuje za ich rovnaké práva a za to, aby boli súčasťou spoločnosti.\nSnaží sa aj o lepšie zákony v Európe.\nVznikla v roku 1988.\nMá 79 členov v 39 európskych krajinách.\nSídli v Bruseli v Belgicku.",
+      "domain": "ostatné",
+      "note": "Anglický výraz: Inclusion Europe. Počet členov podľa zdroja. Slovenským členom je Zväz na pomoc ľuďom s mentálnym postihnutím v SR; overiť. Zdroj píše v prvej osobe my, preklad v tretej osobe.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#IE",
+        "title": "Inclusion Europe",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "inclusion-international",
+      "term": "Inclusion International",
+      "easy": "Inclusion International je organizácia ľudí s mentálnym znevýhodnením a ich rodín.\nBojuje za ich rovnaké práva a za ich miesto vo všetkých oblastiach života.\nVznikla pred viac ako 50 rokmi.\nMá 200 členov v 115 krajinách sveta.\nSídli v Londýne vo Veľkej Británii.",
+      "domain": "ostatné",
+      "note": "Anglický výraz: Inclusion International. Svetová organizácia, Inclusion Europe je jej európska časť. Počet členov podľa zdroja.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#II",
+        "title": "Inclusion International",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "inkluzivne-vzdelavanie",
+      "term": "inkluzívne vzdelávanie",
+      "forms": [
+        "inkluzívneho vzdelávania",
+        "inkluzívnym vzdelávaním",
+        "inkluzívne zamestnávanie",
+        "inkluzívneho zamestnávania"
+      ],
+      "easy": "Inkluzívne vzdelávanie znamená, že ľudia s mentálnym znevýhodnením sa učia spolu s ostatnými ľuďmi.\nInkluzívne zamestnávanie znamená, že spolu s ostatnými aj pracujú.\nTo isté platí pre kurzy a prípravu na povolanie.",
+      "domain": "vzdelávanie",
+      "note": "Anglický výraz: Inclusive education, training, employment. Anglické heslo pokrýva vzdelávanie, odbornú prípravu aj zamestnanie. Súvisí s heslom inklúzia v hurraki-sk.json.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#InclusiveEducation",
+        "title": "Inclusive education, training, employment",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "kandidatna-listina",
+      "term": "kandidátna listina",
+      "forms": [
+        "kandidátnej listiny",
+        "na kandidátnej listine",
+        "kandidátne listiny",
+        "kandidátnych listín"
+      ],
+      "easy": "Kandidátna listina je zoznam všetkých kandidátov jednej strany.\nKandidát je človek, ktorého môžete voliť.\nĽudia na začiatku zoznamu majú najväčšiu šancu, že ich zvolia.",
+      "domain": "úrad",
+      "note": "Anglický výraz: Electoral List. Na Slovensku môžu poradie zmeniť prednostné hlasy, takzvané krúžkovanie. Pri voľbách do Národnej rady je kandidátna listina strany zároveň jej hlasovacím lístkom.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Electoral%20List",
+        "title": "Electoral List",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "komisar-rady-europy-pre-ludske-prava",
+      "term": "komisár Rady Európy pre ľudské práva",
+      "forms": [
+        "komisárka Rady Európy pre ľudské práva",
+        "komisára Rady Európy pre ľudské práva",
+        "komisár pre ľudské práva",
+        "komisárka pre ľudské práva"
+      ],
+      "easy": "Komisár pre ľudské práva pracuje pre Radu Európy.\nDbá na to, aby ľudia poznali a dodržiavali ľudské práva.\nNavštevuje krajiny, ktoré sú členmi Rady Európy.\nV týchto krajinách sa s ľuďmi rozpráva o ľudských právach.",
+      "domain": "právo",
+      "note": "Anglický výraz: Commissioner for Human Rights at the Council of Europe.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#CHR",
+        "title": "Commissioner for Human Rights at the Council of Europe",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "komplexne-potreby-podpory",
+      "term": "komplexné potreby podpory",
+      "forms": [
+        "komplexných potrieb podpory",
+        "komplexnými potrebami podpory",
+        "s komplexnými potrebami podpory"
+      ],
+      "easy": "Komplexné potreby podpory znamenajú, že človek so zdravotným postihnutím potrebuje veľa pomoci.\nPotrebuje pomoc pri mnohých veciach a táto pomoc je zložitá.",
+      "domain": "sociálne služby",
+      "note": "Anglický výraz: Complex Support Needs. Ustálený slovenský výraz chýba; používa sa aj vysoká miera podpory.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#CSN",
+        "title": "Complex Support Needs",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "komunita",
+      "term": "komunita",
+      "forms": [
+        "komunity",
+        "v komunite",
+        "komunitu",
+        "komunitou"
+      ],
+      "easy": "Komunita sú ľudia, ktorí k sebe patria.\nKeď žijete v komunite, bývate medzi ostatnými ľuďmi, nie v ústave.",
+      "example": "Susedia, ktorí bývajú v tej istej štvrti, sú komunita.\nĽudia, ktorí majú rovnaké náboženstvo, sú tiež komunita.",
+      "domain": "sociálne služby",
+      "note": "Anglický výraz: Community. Druhá veta je doplnená podľa toho, ako Inclusion Europe slovo používa v heslách Independent living a Deinstitutionalisation. Heslo nemá na stránke zdroja kotvu, adresa vedie na celú stránku.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/",
+        "title": "Community",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "komunitne-sluzby",
+      "term": "komunitné služby",
+      "forms": [
+        "komunitných služieb",
+        "komunitné sociálne služby",
+        "komunitnými službami",
+        "služby v komunite"
+      ],
+      "easy": "Komunitné služby sú pomoc, ktorú vám dávajú ľudia z vášho okolia.\nPomoc dostávate tam, kde bývate, nie v ústave.",
+      "domain": "sociálne služby",
+      "note": "Anglický výraz: Community-based services. Druhá veta je doplnená; zdroj hovorí len o podpore od ľudí z komunity. Na Slovensku sa píše aj komunitné sociálne služby. Heslo nemá na stránke zdroja kotvu, adresa vedie na celú stránku.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/",
+        "title": "Community-based services",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "kultura",
+      "term": "kultúra",
+      "forms": [
+        "kultúry",
+        "kultúre",
+        "kultúrou",
+        "v kultúre"
+      ],
+      "easy": "Kultúra sú myšlienky a správanie skupiny ľudí.\nĽudia ich ukazujú cez umenie, hudbu, divadlo, jedlo a iné veci.\nVšetky tieto veci patria ku kultúre.",
+      "domain": "ostatné",
+      "note": "Anglický výraz: Culture.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Culture",
+        "title": "Culture",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "lahko-citatelny-text",
+      "term": "ľahko čitateľný text",
+      "forms": [
+        "ľahko čitateľného textu",
+        "v ľahko čitateľnom texte",
+        "ľahko čitateľné texty",
+        "ľahko čitateľná verzia",
+        "ľahko čitateľné informácie"
+      ],
+      "easy": "Ľahko čitateľný text je text, ktorému ľahko porozumiete.\nRozumejú mu aj ľudia s mentálnym znevýhodnením.\nMá jednoduché slová a krátke vety.\nŤažké slová text vysvetľuje.\nText musí byť dobre vidieť, napríklad čierne písmo na bielom pozadí.\nMedzi riadkami je dosť miesta.\nČasto má obrázky, ktoré ukazujú, o čom text hovorí.\nČlovek s mentálnym znevýhodnením musí skontrolovať, či je text zrozumiteľný.\nĽahko čitateľné texty majú často európske logo, aby ste ich ľahšie našli.\nPre ľahko čitateľné texty platia európske pravidlá.",
+      "same_words": [
+        "easy-to-read"
+      ],
+      "domain": "ostatné",
+      "note": "Anglický výraz: Easy-to-read. Zdroj odkazuje na európske pravidlá: https://www.inclusion.eu/european-standards-how-to-use-easy-to-read. Nepoužívať ľahké čítanie.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#ETR",
+        "title": "Easy-to-read",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "ludske-prava-ie",
+      "term": "ľudské práva",
+      "forms": [
+        "ľudských práv",
+        "ľudskými právami",
+        "ľudské právo"
+      ],
+      "easy": "Ľudské práva sú práva, ktoré má mať každý človek.",
+      "example": "Každý človek má právo na život.\nKaždý človek má právo povedať svoj názor.",
+      "domain": "právo",
+      "note": "Anglický výraz: Human Rights.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#HumanRights",
+        "title": "Human Rights",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "manifest",
+      "term": "manifest",
+      "forms": [
+        "manifestu",
+        "manifesty",
+        "manifestom",
+        "volebný manifest"
+      ],
+      "easy": "Manifest je text, ktorý vysvetľuje ciele človeka alebo organizácie.\nČasto ho píše strana alebo človek pred voľbami, keď chce, aby ho zvolili.\nTakému textu hovoríme aj volebný program.\nManifest môžu napísať aj organizácie.\nKandidátom v ňom povedia, čo považujú za dôležité.\nManifest si môže prečítať každý.",
+      "same_words": [
+        "volebný program"
+      ],
+      "domain": "úrad",
+      "note": "Anglický výraz: Manifesto. Upravené pre Slovensko: doplnený výraz volebný program, ktorý čitateľ pozná zo slovenských volieb.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Manifesto",
+        "title": "Manifesto",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "mental-health-europe",
+      "term": "Mental Health Europe",
+      "easy": "Mental Health Europe je organizácia, ktorá sa venuje duševnému zdraviu.\nDuševné zdravie znamená, ako zdravá je vaša myseľ.\nOrganizácia zastupuje ľudí, ktorí majú problémy s duševným zdravím.\nZastupuje aj ľudí, ktorí pracujú v oblasti duševného zdravia.\nSídli v Bruseli v Belgicku.",
+      "domain": "zdravie",
+      "note": "Anglický výraz: Mental Health Europe. Anglický názov znamená Duševné zdravie Európa.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#MHE",
+        "title": "Mental Health Europe",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "mentalne-znevyhodnenie",
+      "term": "mentálne znevýhodnenie",
+      "forms": [
+        "mentálneho znevýhodnenia",
+        "s mentálnym znevýhodnením",
+        "mentálne postihnutie",
+        "mentálneho postihnutia",
+        "s mentálnym postihnutím"
+      ],
+      "easy": "Mentálne znevýhodnenie znamená, že je pre vás ťažšie rozumieť informáciám.\nŤažšie sa aj učíte nové veci ako iní ľudia.\nPreto sú niektoré veci v živote ťažšie.\nĽudia s mentálnym znevýhodnením často potrebujú podporu pri učení alebo v práci.\nMentálne znevýhodnenie sa často začne ešte pred dospelosťou.\nTrvá celý život.\nŽivot im uľahčí napríklad ľahko čitateľný text.\nNiektorí ľudia hovoria mentálne postihnutie.",
+      "domain": "sociálne služby",
+      "note": "Anglický výraz: Intellectual disability. Zdroj uvádza aj anglické learning disabilities; upravené na slovenské mentálne postihnutie, ktoré používa napríklad ZPMP v SR.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#IntellectualDisability",
+        "title": "Intellectual disability",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "mimovladna-organizacia",
+      "term": "mimovládna organizácia",
+      "forms": [
+        "mimovládnej organizácie",
+        "mimovládne organizácie",
+        "mimovládnych organizácií",
+        "mimovládnou organizáciou"
+      ],
+      "easy": "Mimovládna organizácia je skupina ľudí, ktorí spolu pracujú.\nNepatrí pod vládu žiadnej krajiny.\nMimovládne organizácie sú často neziskové.\nNezisková organizácia nechce zarobiť peniaze pre ľudí, ktorí ju vedú.\nChce dosiahnuť niečo iné, napríklad pomáhať ľuďom.\nSkratka je MVO alebo anglicky NGO.",
+      "same_words": [
+        "MVO",
+        "NGO",
+        "mimovládka"
+      ],
+      "domain": "ostatné",
+      "note": "Anglický výraz: NGO.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#NGO",
+        "title": "NGO",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "nezavisly-zivot",
+      "term": "nezávislý život",
+      "forms": [
+        "nezávislého života",
+        "nezávislým životom",
+        "nezávislému životu",
+        "nezávislý spôsob života"
+      ],
+      "easy": "Nezávislý život znamená, že ľudia s mentálnym znevýhodnením žijú medzi ostatnými ľuďmi.\nDostávajú podporu, aby mohli robiť to, čo chcú.\nSami si vyberajú, kde a s kým budú bývať.\nSami rozhodujú, ako trávia svoj čas.\nZažívajú to isté ako všetci ostatní ľudia.",
+      "same_words": [
+        "samostatný život"
+      ],
+      "domain": "sociálne služby",
+      "note": "Anglický výraz: Independent living.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#IndependentLiving",
+        "title": "Independent living",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "obcianske-prava",
+      "term": "občianske práva",
+      "forms": [
+        "občianskych práv",
+        "občianskymi právami",
+        "občianskym právam"
+      ],
+      "easy": "Občianske práva sú práva, ktoré majú všetci ľudia v krajine.",
+      "domain": "právo",
+      "note": "Anglický výraz: Civil Rights. Nezamieňať s občianskym právom ako odborom práva, ktorý upravuje Občiansky zákonník.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#CivilRights",
+        "title": "Civil Rights",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "opatrovnictvo",
+      "term": "opatrovníctvo",
+      "forms": [
+        "opatrovníctva",
+        "pod opatrovníctvom",
+        "opatrovníctvom",
+        "opatrovníctve"
+      ],
+      "easy": "Opatrovníctvo znamená, že jeden človek rozhoduje o živote iného človeka.\nOpatrovníka určuje súd.\nČlovek, ktorý rozhoduje za vás, je váš opatrovník.\nOpatrovník môže za vás rozhodnúť napríklad o tom, kde budete bývať.\nNiekedy ľudia pod opatrovníctvom nesmú voliť ani uzavrieť manželstvo.\nNiekedy sa nesmú starať o svoje deti.",
+      "domain": "právo",
+      "note": "Anglický výraz: Guardianship. Doplnené, že opatrovníka určuje súd. Čo ľudia pod opatrovníctvom nesmú, sa v krajinách líši; slovenský stav overiť. Súvisí s heslami spôsobilosť na právne úkony a opatrovník.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Guardianship",
+        "title": "Guardianship",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "organizacia",
+      "term": "organizácia",
+      "forms": [
+        "organizácie",
+        "organizácii",
+        "organizáciou",
+        "organizácií"
+      ],
+      "easy": "Organizácia je skupina ľudí, ktorí pracujú na tom istom cieli.",
+      "domain": "ostatné",
+      "note": "Anglický výraz: Organisation. Heslo nemá na stránke zdroja kotvu, adresa vedie na celú stránku.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/",
+        "title": "Organisation",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "organizacia-spojenych-narodov",
+      "term": "Organizácia Spojených národov",
+      "forms": [
+        "Organizácie Spojených národov",
+        "Organizáciou Spojených národov",
+        "v Organizácii Spojených národov",
+        "Spojené národy"
+      ],
+      "easy": "Organizácia Spojených národov je medzinárodná organizácia.\nPracuje pre mier a bezpečnosť na celom svete.\nOSN je skratka Organizácie Spojených národov.\nOSN sídli na rôznych miestach.\nNapríklad v New Yorku v Spojených štátoch amerických.\nAlebo v Ženeve vo Švajčiarsku.",
+      "same_words": [
+        "OSN"
+      ],
+      "domain": "právo",
+      "note": "Anglický výraz: United Nations.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#UN",
+        "title": "United Nations",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "osobna-asistencia-ie",
+      "term": "osobná asistencia",
+      "forms": [
+        "osobnej asistencie",
+        "osobnú asistenciu",
+        "osobnou asistenciou",
+        "osobný asistent"
+      ],
+      "easy": "Osobná asistencia je podpora, ktorú dostávate len vy a presne podľa vašich potrieb.\nPomáha vám pri nej osobný asistent.",
+      "domain": "sociálne služby",
+      "note": "Anglický výraz: Personal Assistance. Druhá veta je doplnená. Na Slovensku na osobnú asistenciu prispieva úrad práce, sociálnych vecí a rodiny.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#PersonalAssistance",
+        "title": "Personal Assistance",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "podporna-osoba",
+      "term": "podporná osoba",
+      "forms": [
+        "podpornej osoby",
+        "podporné osoby",
+        "podpornou osobou",
+        "podporných osôb"
+      ],
+      "easy": "Podporná osoba je človek, ktorý pomáha ľuďom so zdravotným postihnutím.\nPomáha im robiť rôzne veci.",
+      "example": "Pomôže vám nakúpiť potraviny.\nAlebo vám vysvetlí ťažký list.",
+      "domain": "sociálne služby",
+      "note": "Anglický výraz: Support person. Ustálený slovenský výraz chýba; podľa situácie aj asistent alebo sprievodca. Heslo nemá na stránke zdroja kotvu, adresa vedie na celú stránku.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/",
+        "title": "Support person",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "podporovane-rozhodovanie",
+      "term": "podporované rozhodovanie",
+      "forms": [
+        "podporovaného rozhodovania",
+        "podporovanom rozhodovaní",
+        "podporovaným rozhodovaním"
+      ],
+      "easy": "Podporované rozhodovanie znamená, že ľudia s mentálnym znevýhodnením rozhodujú o svojom živote.\nPomáha im pri tom iný človek.\nRozhodujú však oni sami.\nS podporou sa môžu rozhodovať o svojom živote a o svojom zdraví.\nMôžu si založiť rodinu a vychovávať deti.\nMôžu podpisovať zmluvy, aj pracovné zmluvy.\nMôžu mať účet v banke a hospodáriť so svojimi peniazmi a majetkom.\nMôžu sa zapájať do politiky a voliť.",
+      "domain": "právo",
+      "note": "Anglický výraz: Supported decision making. Zdroj píše o podpore od človeka bez zdravotného postihnutia; preklad hovorí iný človek. Veta Rozhodujú však oni sami je doplnená. Na Slovensku podporované rozhodovanie zatiaľ nie je v zákone ako náhrada opatrovníctva; overiť.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#SupportedDecision",
+        "title": "Supported decision making",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "pohlavie",
+      "term": "pohlavie",
+      "forms": [
+        "pohlavia",
+        "pohlaví",
+        "pohlavím"
+      ],
+      "easy": "Pohlavie hovorí, či ste žena alebo muž.\nNiektorí ľudia sa necítia ani ako žena, ani ako muž.\nHovoria o sebe, že sú nebinárni.",
+      "domain": "ostatné",
+      "note": "Anglický výraz: Gender. Anglické gender je doslova rod. Na tlačivách čitateľ nájde slovo pohlavie, preto je heslom. V odborných textoch aj rod alebo rodová identita. Heslo nemá na stránke zdroja kotvu, adresa vedie na celú stránku.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/",
+        "title": "Gender",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "politicka-strana",
+      "term": "politická strana",
+      "forms": [
+        "politickej strany",
+        "politické strany",
+        "politických strán",
+        "politickou stranou"
+      ],
+      "easy": "Politická strana je skupina ľudí s podobným názorom na to, ako riadiť krajinu.\nVo voľbách môžete voliť politickú stranu.",
+      "domain": "úrad",
+      "note": "Anglický výraz: Political party. Druhá veta je doplnená.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Party",
+        "title": "Political party",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "politik",
+      "term": "politik",
+      "forms": [
+        "politici",
+        "politikov",
+        "politikmi"
+      ],
+      "easy": "Politik je človek, ktorý pomáha riadiť krajinu alebo jej časť.\nAlebo človek, ktorý to chce robiť.\nPolitici sú napríklad starostovia, ministri a kandidáti vo voľbách.",
+      "domain": "úrad",
+      "note": "Anglický výraz: Politician. Pozor: nástroj môže toto heslo a heslo politika hlásiť navzájom, lebo majú rovnaký základ. Tvar politička v zozname tvarov chýba zámerne: nástroj by ho hlásil aj pri slove politické.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Politician",
+        "title": "Politician",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "politika",
+      "term": "politika",
+      "forms": [
+        "politiky",
+        "v politike",
+        "politikou"
+      ],
+      "easy": "Politika je riadenie krajiny alebo jej časti.\nČasť krajiny je napríklad obec alebo kraj.",
+      "domain": "úrad",
+      "note": "Anglický výraz: Politics. Príklad s obcou a krajom je doplnený.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Politics",
+        "title": "Politics",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "posilnenie-postavenia",
+      "term": "posilnenie postavenia",
+      "forms": [
+        "posilňovanie postavenia",
+        "posilnenia postavenia",
+        "posilniť postavenie"
+      ],
+      "easy": "Posilnenie postavenia znamená, že sa stávate silnejší.\nDokážete sa postaviť sami za seba.",
+      "same_words": [
+        "empowerment"
+      ],
+      "domain": "sociálne služby",
+      "note": "Anglický výraz: Empower. Anglicky empowerment. V slovenských textoch EÚ posilnenie postavenia, v sociálnej práci aj zmocňovanie.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Empower",
+        "title": "Empower",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "poslanec-europskeho-parlamentu",
+      "term": "poslanec Európskeho parlamentu",
+      "forms": [
+        "poslanci Európskeho parlamentu",
+        "poslankyňa Európskeho parlamentu",
+        "poslancov Európskeho parlamentu",
+        "europoslanec",
+        "europoslanci"
+      ],
+      "easy": "Poslanci Európskeho parlamentu sú politici, ktorí pracujú v Európskom parlamente.\nHovorí sa im aj europoslanci.\nVolíte ich vo voľbách do Európskeho parlamentu.",
+      "domain": "úrad",
+      "note": "Anglický výraz: MEPs. Anglická skratka MEP, Member of the European Parliament.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#MEPs",
+        "title": "MEPs",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "prava",
+      "term": "práva",
+      "forms": [
+        "práv",
+        "právami",
+        "vaše práva"
+      ],
+      "easy": "Keď máte práva, znamená to, že môžete niečo robiť a niečo mať.\nPráva často nájdete v ústave.",
+      "domain": "právo",
+      "note": "Anglický výraz: Rights. Pozor: nástroj môže heslo hlásiť aj pri slovách práve alebo pravý, lebo majú rovnaký základ. Heslo nemá na stránke zdroja kotvu, adresa vedie na celú stránku.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/",
+        "title": "Rights",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "predseda",
+      "term": "predseda",
+      "forms": [
+        "predsedníčka",
+        "predsedu",
+        "predsedom",
+        "predsedovia",
+        "predsedajúci"
+      ],
+      "easy": "Predseda je človek, ktorý vedie schôdzu alebo organizáciu.\nAk je to žena, hovoríme jej predsedníčka.",
+      "domain": "ostatné",
+      "note": "Anglický výraz: Chair. Zdroj vysvetľuje všeobecný význam, nie predsedu Inclusion Europe, preto je heslo ponechané.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Chair",
+        "title": "Chair",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "priestor-na-upravu-hlasovacich-listkov",
+      "term": "priestor na úpravu hlasovacích lístkov",
+      "forms": [
+        "priestoru na úpravu hlasovacích lístkov",
+        "v priestore na úpravu hlasovacích lístkov",
+        "osobitný priestor na úpravu hlasovacích lístkov"
+      ],
+      "easy": "Priestor na úpravu hlasovacích lístkov je malé uzavreté miesto vo volebnej miestnosti.\nĽudia mu hovoria aj plenta.\nIdete tam sami, aby ste volili tajne.\nNikto nevidí, koho volíte.",
+      "same_words": [
+        "plenta",
+        "plentou",
+        "volebná kabína"
+      ],
+      "domain": "úrad",
+      "note": "Anglický výraz: Voting booth. Heslo je slovenský úradný výraz. Kto pre zdravotné postihnutie nemôže sám upraviť hlasovací lístok, smie si vziať so sebou iného voliča, nie člena komisie.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Voting%20Booth",
+        "title": "Voting booth",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "pristupny",
+      "term": "prístupný",
+      "forms": [
+        "prístupná",
+        "prístupné",
+        "prístupného",
+        "prístupnej",
+        "prístupných"
+      ],
+      "easy": "Prístupné je to, čo vedia ľahko používať aj ľudia so zdravotným postihnutím.\nNapríklad rampa, po ktorej sa dostanete do budovy.\nAlebo informácie v ľahko čitateľnom texte.\nAlebo informácie v posunkovom jazyku.",
+      "domain": "ostatné",
+      "note": "Anglický výraz: Accessible. Podstatné meno prístupnosť má samostatné heslo vo verejna-sprava-sk.json.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Accessible",
+        "title": "Accessible",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "rada-europskej-unie",
+      "term": "Rada Európskej únie",
+      "forms": [
+        "Rady Európskej únie",
+        "v Rade Európskej únie",
+        "Radou Európskej únie",
+        "Rade Európskej únie"
+      ],
+      "easy": "V Rade Európskej únie sa stretávajú ministri z krajín Európskej únie.\nSchvaľujú zákony a rozprávajú sa o politike v Európskej únii.\nRade Európskej únie sa hovorí aj Rada ministrov.\nNie je to to isté ako Rada Európy.",
+      "same_words": [
+        "Rada ministrov",
+        "Rada EÚ"
+      ],
+      "domain": "úrad",
+      "note": "Anglický výraz: Council of the European Union. Posledná veta je doplnená.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#COTEU",
+        "title": "Council of the European Union",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "rada-europy",
+      "term": "Rada Európy",
+      "forms": [
+        "Rady Európy",
+        "Radou Európy",
+        "v Rade Európy",
+        "Rade Európy"
+      ],
+      "easy": "Rada Európy je organizácia európskych krajín.\nMá 46 členských krajín.\nPracuje pre ľudské práva a rovnosť všetkých ľudí v Európe.\nRada Európy nerobí zákony.\nDohliada však, aby krajiny dodržiavali niektoré medzinárodné dohovory.\nRada Európy nie je súčasťou Európskej únie.",
+      "domain": "právo",
+      "note": "Anglický výraz: Council of Europe. Zdroj uvádza 47 členov; od marca 2022 je ich 46. Posledná veta je doplnená, aby si čitateľ Radu Európy nezamenil s Radou Európskej únie.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#COEU",
+        "title": "Council of Europe",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "referendum-ie",
+      "term": "referendum",
+      "forms": [
+        "referenda",
+        "v referende",
+        "referendom"
+      ],
+      "easy": "V referende poviete svoj názor na dôležitú otázku pre vašu krajinu.\nIdete do volebnej miestnosti ako pri voľbách.",
+      "domain": "úrad",
+      "note": "Anglický výraz: Referendum.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Referendum",
+        "title": "Referendum",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "sebaobhajovanie",
+      "term": "sebaobhajovanie",
+      "forms": [
+        "sebaobhajovania",
+        "sebaobhajca",
+        "sebaobhajcovia",
+        "sebaobhajkyňa"
+      ],
+      "easy": "Sebaobhajovanie znamená, že ľudia s mentálnym znevýhodnením hovoria sami za seba.\nTýmto ľuďom hovoríme sebaobhajcovia.",
+      "domain": "sociálne služby",
+      "note": "Anglický výraz: Self-Advocacy. Anglicky self-advocacy a self-advocates.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Self-Advocacy",
+        "title": "Self-Advocacy",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "segregacia",
+      "term": "segregácia",
+      "forms": [
+        "segregácie",
+        "segregáciou",
+        "segregácii"
+      ],
+      "easy": "Segregácia je, keď niekoho nespravodlivo oddelia od ostatných ľudí.\nNapríklad pre jeho zdravotné postihnutie.",
+      "domain": "právo",
+      "note": "Anglický výraz: Segregation.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Segregation",
+        "title": "Segregation",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "skolenie",
+      "term": "školenie",
+      "forms": [
+        "školenia",
+        "na školení",
+        "školením",
+        "školení"
+      ],
+      "easy": "Školenie je kurz, na ktorom sa ľudia učia nové veci.\nŠkolenie býva často v práci.",
+      "domain": "vzdelávanie",
+      "note": "Anglický výraz: Training. Heslo nemá na stránke zdroja kotvu, adresa vedie na celú stránku.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/",
+        "title": "Training",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "skupina-na-vysokej-urovni-pre-otazky-zdravotneho-postihnutia",
+      "term": "Skupina na vysokej úrovni pre otázky zdravotného postihnutia",
+      "forms": [
+        "Skupiny na vysokej úrovni pre otázky zdravotného postihnutia",
+        "skupina na vysokej úrovni",
+        "skupiny na vysokej úrovni"
+      ],
+      "easy": "Skupina na vysokej úrovni pre otázky zdravotného postihnutia je skupina odborníkov.\nStará sa o to, aby rôzni ľudia dobre spolupracovali.\nSú to ľudia, ktorí pracujú pre Európsku komisiu.\nSú to aj ľudia, ktorí pracujú pre krajiny Európskej únie.\nSú to aj ľudia z organizácií, ktoré bránia práva ľudí so zdravotným postihnutím.",
+      "same_words": [
+        "DHLG"
+      ],
+      "domain": "úrad",
+      "note": "Anglický výraz: Disability High Level Group. Slovenský názov skupiny nie je ustálený; overiť v dokumentoch Európskej komisie.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#DHLG",
+        "title": "Disability High Level Group",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "smernica-o-rovnovahe-medzi-pracovnym-a-sukromnym-zivotom",
+      "term": "smernica o rovnováhe medzi pracovným a súkromným životom",
+      "forms": [
+        "smernice o rovnováhe medzi pracovným a súkromným životom",
+        "rovnováha medzi pracovným a súkromným životom",
+        "rovnováhy medzi pracovným a súkromným životom",
+        "rovnováha medzi prácou a súkromím"
+      ],
+      "easy": "Rovnováha medzi prácou a súkromím znamená, že máte čas aj na veci mimo práce.\nEurópska únia o tom urobila zákon.\nVolá sa smernica o rovnováhe medzi pracovným a súkromným životom.\nSmernica je zákon Európskej únie, ktorý krajiny prevezmú do svojich zákonov.\nRodiny ľudí s mentálnym znevýhodnením im chcú pomáhať, ale majú málo času.\nPodľa tohto zákona môžu dostať viac voľna z práce.\nZákon je dôležitý aj pre rodičov s mentálnym znevýhodnením.\nAj oni potrebujú viac času pre svoje deti.\nRovnováha medzi prácou a súkromím patrí aj do Európskeho piliera sociálnych práv.",
+      "domain": "práca",
+      "note": "Anglický výraz: Work-Life Balance Directive. Smernica (EÚ) 2019/1158. Veta o tom, čo je smernica, je doplnená.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#WorkLife",
+        "title": "Work-Life Balance Directive",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "socialne-media",
+      "term": "sociálne médiá",
+      "forms": [
+        "sociálnych médií",
+        "na sociálnych médiách",
+        "sociálnymi médiami"
+      ],
+      "easy": "Sociálne médiá sú webové stránky a aplikácie na internete.\nMôžete tam dávať a zdieľať fotky, videá a informácie.\nAplikácia je program, s ktorým používate sociálne médiá v mobilnom telefóne.",
+      "domain": "digitál",
+      "note": "Anglický výraz: Social Media. Súvisí s heslom sociálna sieť v hurraki-sk.json.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#SM",
+        "title": "Social Media",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "socialne-sluzby",
+      "term": "sociálne služby",
+      "forms": [
+        "sociálnych služieb",
+        "sociálna služba",
+        "sociálnu službu",
+        "sociálnymi službami"
+      ],
+      "easy": "Sociálne služby sú podpora pre ľudí so zdravotným postihnutím.\nNa Slovensku sú aj pre starších ľudí a pre ľudí v ťažkej situácii.",
+      "example": "Napríklad pomoc doma alebo podporované bývanie.",
+      "domain": "sociálne služby",
+      "note": "Anglický výraz: Services. Zdroj má všeobecné services a myslí podporu pre ľudí so zdravotným postihnutím. Upravené pre Slovensko: heslo sociálne služby a doplnená druhá veta, lebo slovenské sociálne služby sú širšie. Heslo nemá na stránke zdroja kotvu, adresa vedie na celú stránku.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/",
+        "title": "Services",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "specialna-skola",
+      "term": "špeciálna škola",
+      "forms": [
+        "špeciálnej školy",
+        "špeciálne školy",
+        "v špeciálnej škole",
+        "špeciálnych škôl"
+      ],
+      "easy": "Špeciálna škola je škola len pre žiakov so zdravotným postihnutím.",
+      "domain": "vzdelávanie",
+      "note": "Anglický výraz: Special education schools. Heslo nemá na stránke zdroja kotvu, adresa vedie na celú stránku.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/",
+        "title": "Special education schools",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "sposobilost-na-pravne-ukony-ie",
+      "term": "spôsobilosť na právne úkony",
+      "forms": [
+        "spôsobilosti na právne úkony",
+        "právna spôsobilosť",
+        "právnej spôsobilosti",
+        "spôsobilý na právne úkony"
+      ],
+      "easy": "Spôsobilosť znamená, že sa v danej chvíli viete rozhodnúť.\nZákon určuje, kedy túto spôsobilosť človek má.\nVtedy hovoríme o spôsobilosti na právne úkony.\nZnamená to, že ľudia s mentálnym znevýhodnením môžu sami robiť dôležité veci.\nMôžu sa rozhodovať o svojom živote.\nMôžu uzavrieť manželstvo, mať rodinu a vychovávať deti.\nMôžu podpisovať zmluvy, aj pracovné zmluvy.\nMôžu mať účet v banke.\nMôžu hospodáriť so svojimi peniazmi a majetkom.\nMôžu rozhodovať o svojom zdraví.\nMôžu sa zapájať do politiky a voliť.",
+      "domain": "právo",
+      "note": "Anglický výraz: Legal capacity. V Dohovore o právach osôb so zdravotným postihnutím, článok 12, sa píše právna spôsobilosť.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#LegalCapacity",
+        "title": "Legal capacity",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "spravna-rada",
+      "term": "správna rada",
+      "forms": [
+        "správnej rady",
+        "správnou radou",
+        "v správnej rade",
+        "správne rady"
+      ],
+      "easy": "Správna rada je skupina ľudí, ktorí radia firme alebo organizácii.\nAk poradia zle, sú za to zodpovední.",
+      "same_words": [
+        "predstavenstvo"
+      ],
+      "domain": "ostatné",
+      "note": "Anglický výraz: Board of Directors. V neziskovej organizácii a v nadácii sa po slovensky hovorí správna rada, vo firme predstavenstvo. Zdroj píše, že rada radí; v slovenských organizáciách správna rada aj rozhoduje.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#BoD",
+        "title": "Board of Directors",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "stanovy",
+      "term": "stanovy",
+      "forms": [
+        "v stanovách",
+        "stanovami",
+        "stanovy organizácie"
+      ],
+      "easy": "Stanovy sú text so základnými pravidlami organizácie.\nHovoria, aké ciele organizácia má.\nHovoria, kto sa môže stať jej členom.\nHovoria aj to, ako ľudia v organizácii spolupracujú a rozhodujú.",
+      "domain": "ostatné",
+      "note": "Anglický výraz: Constitution. Zdroj myslí základný dokument organizácie, po slovensky stanovy. Ústava štátu má samostatné heslo v hurraki-sk.json.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Constitution",
+        "title": "Constitution",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "staz",
+      "term": "stáž",
+      "forms": [
+        "stáže",
+        "na stáži",
+        "stážou",
+        "stáží"
+      ],
+      "easy": "Stáž je práca na krátky čas.\nPomôže vám zistiť, akú prácu chcete neskôr robiť.",
+      "domain": "práca",
+      "note": "Anglický výraz: Internship. Súvisí s heslom prax v hurraki-sk.json. Heslo nemá na stránke zdroja kotvu, adresa vedie na celú stránku.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/",
+        "title": "Internship",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "strategia",
+      "term": "stratégia",
+      "forms": [
+        "stratégie",
+        "stratégiou",
+        "v stratégii",
+        "stratégií"
+      ],
+      "easy": "Stratégia je plán s cieľmi do budúcnosti.\nStratégia hovorí aj to, ako tieto ciele dosiahnuť.",
+      "domain": "ostatné",
+      "note": "Anglický výraz: Strategy.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Strategy",
+        "title": "Strategy",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "svetovy-kongres",
+      "term": "Svetový kongres",
+      "forms": [
+        "Svetového kongresu",
+        "na Svetovom kongrese",
+        "Svetovým kongresom"
+      ],
+      "easy": "Svetový kongres je veľké podujatie organizácie Inclusion International.\nKoná sa raz za 4 roky.\nPrídu naň sebaobhajcovia a ich rodiny.\nPrídu aj ľudia, ktorí pracujú s ľuďmi s mentálnym znevýhodnením.",
+      "domain": "ostatné",
+      "note": "Anglický výraz: World Congress. Podujatie organizácie Inclusion International, nie interný orgán Inclusion Europe.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#WorldCongress",
+        "title": "World Congress",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "tyranie",
+      "term": "týranie",
+      "forms": [
+        "týrania",
+        "týraní",
+        "týraním"
+      ],
+      "easy": "Týranie je, keď s vami niekto zle zaobchádza.\nNapríklad na vás kričí.\nAlebo vám ubližuje, bije vás alebo inak používa násilie.",
+      "domain": "právo",
+      "note": "Anglický výraz: Abuse. Slovenčina nemá pre abuse jedno slovo. Zvolené týranie; podľa kontextu aj zneužívanie alebo zlé zaobchádzanie, ktoré má samostatné heslo vo verejna-sprava-sk.json.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Abuse",
+        "title": "Abuse",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "ustav",
+      "term": "ústav",
+      "forms": [
+        "ústavy",
+        "ústavu",
+        "v ústave",
+        "ústavov",
+        "ústavná starostlivosť"
+      ],
+      "easy": "Ústav je miesto, kde spolu žijú ľudia s mentálnym znevýhodnením.\nŽijú oddelene od ostatných ľudí.\nTomuto oddeleniu hovoríme segregácia.\nNiekedy tam ľudia žijú proti svojej vôli.\nĽudia v ústave musia dodržiavať pravidlá ústavu.\nNemôžu rozhodovať sami za seba.",
+      "domain": "sociálne služby",
+      "note": "Anglický výraz: Institutions. V textoch úradov: zariadenie sociálnych služieb s celoročným pobytom, napríklad domov sociálnych služieb. Pozor: nástroj môže heslo hlásiť aj pri slove ústava, lebo tvary sú podobné.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#SeparateInstitutions",
+        "title": "Institutions",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "vlada",
+      "term": "vláda",
+      "forms": [
+        "vlády",
+        "vláde",
+        "vládou",
+        "vláda Slovenskej republiky"
+      ],
+      "easy": "Vláda je skupina ľudí, ktorá rozhoduje, ako riadiť krajinu.\nRozhoduje napríklad, na čo krajina minie peniaze.\nRozhoduje aj o doprave, o školách a o nemocniciach.\nPo voľbách do Národnej rady vznikne nová vláda.",
+      "domain": "úrad",
+      "note": "Anglický výraz: Government. Upravené pre Slovensko: zdroj píše, že sa volí nová vláda. Na Slovensku sa volí Národná rada a vláda vzniká po voľbách.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Government",
+        "title": "Government",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "volby",
+      "term": "voľby",
+      "forms": [
+        "vo voľbách",
+        "voľbami",
+        "voľbám"
+      ],
+      "easy": "Vo voľbách ľudia rozhodujú, kto ich bude zastupovať a rozhodovať za nich.\nVoľby sú v obci, v kraji, na celom Slovensku a v Európskej únii.",
+      "example": "V obci volíte starostu, v meste primátora.\nPre celé Slovensko volíte napríklad prezidenta.",
+      "domain": "úrad",
+      "note": "Anglický výraz: Election. Upravené pre Slovensko: príklady so starostom, primátorom a prezidentom; doplnené kraje a Európska únia.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Election",
+        "title": "Election",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "volby-do-europskeho-parlamentu",
+      "term": "voľby do Európskeho parlamentu",
+      "forms": [
+        "volieb do Európskeho parlamentu",
+        "vo voľbách do Európskeho parlamentu",
+        "európske voľby",
+        "európskych volieb"
+      ],
+      "easy": "Vo voľbách do Európskeho parlamentu volíte poslancov Európskeho parlamentu.\nRozhodujete tak, kto budú noví poslanci.\nPoslanci Európskeho parlamentu zastupujú všetkých ľudí, ktorí žijú v Európskej únii.\nTieto voľby sú každých 5 rokov.",
+      "same_words": [
+        "eurovoľby"
+      ],
+      "domain": "úrad",
+      "note": "Anglický výraz: European elections. Veta zo zdroja o posledných voľbách v máji 2019 je vynechaná, lebo je zastaraná. Ďalšie voľby by mali byť v roku 2029.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#EUelections",
+        "title": "European elections",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "volebna-miestnost-ie",
+      "term": "volebná miestnosť",
+      "forms": [
+        "volebnej miestnosti",
+        "vo volebnej miestnosti",
+        "volebné miestnosti",
+        "volebných miestností"
+      ],
+      "easy": "Volebná miestnosť je miesto, kde počas volieb volíte.\nČasto je to škola, obecný úrad alebo kultúrny dom.",
+      "domain": "úrad",
+      "note": "Anglický výraz: Polling station. Upravené pre Slovensko: zdroj uvádza len školu.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Polling%20Station",
+        "title": "Polling station",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "volebna-schranka",
+      "term": "volebná schránka",
+      "forms": [
+        "volebnej schránky",
+        "do volebnej schránky",
+        "volebné schránky",
+        "prenosná volebná schránka"
+      ],
+      "easy": "Volebná schránka je schránka vo volebnej miestnosti.\nKeď volíte, vhodíte do nej obálku s hlasovacím lístkom.",
+      "domain": "úrad",
+      "note": "Anglický výraz: Ballot box. Upravené pre Slovensko: zdroj hovorí o hlasovacom lístku, na Slovensku sa do schránky vhadzuje obálka s lístkom. Kto nemôže prísť do volebnej miestnosti zo zdravotných dôvodov, môže požiadať o prenosnú volebnú schránku.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Ballot%20Box",
+        "title": "Ballot box",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "volit",
+      "term": "voliť",
+      "forms": [
+        "volíte",
+        "volí",
+        "volia",
+        "volil",
+        "volila"
+      ],
+      "easy": "Voliť znamená vybrať si politikov, ktorí vás zastupujú a rozhodujú za vás.\nV obci alebo v meste volíte starostu alebo primátora.\nPre celé Slovensko volíte napríklad prezidenta.\nVo voľbách do Európskeho parlamentu volíte poslancov Európskeho parlamentu.",
+      "same_words": [
+        "hlasovať"
+      ],
+      "domain": "úrad",
+      "note": "Anglický výraz: Vote. Upravené pre Slovensko: starosta, primátor, prezident.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Vote",
+        "title": "Vote",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "vseobecny-komentar",
+      "term": "všeobecný komentár",
+      "forms": [
+        "všeobecného komentára",
+        "všeobecné komentáre",
+        "vo všeobecnom komentári",
+        "všeobecných komentárov"
+      ],
+      "easy": "Všeobecný komentár je vysvetlenie od organizácie, napríklad od Organizácie Spojených národov.\nOrganizácia v ňom vysvetľuje slová a myšlienky, ktoré používa.",
+      "domain": "právo",
+      "note": "Anglický výraz: General Comment. Napríklad výbor OSN pre práva osôb so zdravotným postihnutím vysvetľuje články dohovoru.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#General",
+        "title": "General Comment",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "vybor-pre-prava-osob-so-zdravotnym-postihnutim",
+      "term": "Výbor pre práva osôb so zdravotným postihnutím",
+      "forms": [
+        "Výboru pre práva osôb so zdravotným postihnutím",
+        "Výbor OSN pre práva osôb so zdravotným postihnutím",
+        "Výboru OSN pre práva osôb so zdravotným postihnutím"
+      ],
+      "easy": "Výbor pre práva osôb so zdravotným postihnutím je skupina ľudí pri Organizácii Spojených národov.\nKontroluje, čo robia krajiny pre práva ľudí so zdravotným postihnutím.\nKontroluje aj Slovensko.",
+      "same_words": [
+        "Výbor CRPD"
+      ],
+      "domain": "právo",
+      "note": "Anglický výraz: UN CRPD Committee. Posledná veta je doplnená.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#UNCRPDCommittee",
+        "title": "UN CRPD Committee",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "vyskumna-sprava",
+      "term": "výskumná správa",
+      "forms": [
+        "výskumnej správy",
+        "výskumné správy",
+        "výskumnú správu",
+        "výskumných správ"
+      ],
+      "easy": "Výskumná správa je text o tom, čo výskumníci zistili o nejakej téme.",
+      "example": "Inclusion Europe a jedna belgická vysoká škola napísali správu.\nSpráva hovorí o práci ľudí s mentálnym znevýhodnením.",
+      "domain": "ostatné",
+      "note": "Anglický výraz: Report. Slovenské slovo správa má viac významov, preto je heslom výskumná správa. V príklade zdroja je škola Antwerp Management School. Heslo nemá na stránke zdroja kotvu, adresa vedie na celú stránku.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/",
+        "title": "Report",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "vyskumnik",
+      "term": "výskumník",
+      "forms": [
+        "výskumníčka",
+        "výskumníci",
+        "výskumníka",
+        "výskumníkov"
+      ],
+      "easy": "Výskumník je človek, ktorý skúma nejakú tému.\nPotom napíše správu o téme a o tom, čo zistil.",
+      "domain": "vzdelávanie",
+      "note": "Anglický výraz: Researcher. Heslo nemá na stránke zdroja kotvu, adresa vedie na celú stránku.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/",
+        "title": "Researcher",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "vzdelavat",
+      "term": "vzdelávať",
+      "forms": [
+        "vzdelávanie",
+        "vzdelávania",
+        "vzdeláva",
+        "vzdelávajú"
+      ],
+      "easy": "Vzdelávať znamená učiť.\nZnamená to aj postarať sa, aby sa ľudia mohli učiť nové veci.",
+      "domain": "vzdelávanie",
+      "note": "Anglický výraz: Educate.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Educate",
+        "title": "Educate",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "zamestnat",
+      "term": "zamestnať",
+      "forms": [
+        "zamestná",
+        "zamestnáte",
+        "zamestnaný",
+        "zamestnaná"
+      ],
+      "easy": "Zamestnať znamená prijať niekoho do práce.",
+      "domain": "práca",
+      "note": "Anglický výraz: Employ.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Employ",
+        "title": "Employ",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "zdravotne-postihnutie-ie",
+      "term": "zdravotné postihnutie",
+      "forms": [
+        "zdravotného postihnutia",
+        "so zdravotným postihnutím",
+        "zdravotným postihnutím"
+      ],
+      "easy": "Zdravotné postihnutie znamená, že niektoré veci sú pre človeka ťažké.\nPreto niektoré veci nemôže robiť.",
+      "example": "Človek, ktorý nemá nohy, nemôže chodiť.\nČlovek, ktorý ťažko číta, nerozumie ťažkému textu.",
+      "domain": "sociálne služby",
+      "note": "Anglický výraz: Disability. Heslo nemá na stránke zdroja kotvu, adresa vedie na celú stránku.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/",
+        "title": "Disability",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "zmena-klimy",
+      "term": "zmena klímy",
+      "forms": [
+        "zmeny klímy",
+        "zmenou klímy",
+        "klimatická zmena",
+        "klimatické zmeny"
+      ],
+      "easy": "Zmena klímy je, keď ľudia poškodia prírodu a mení sa počasie.\nNapríklad znečistenie, veľké dažde a lesné požiare.",
+      "domain": "ostatné",
+      "note": "Anglický výraz: Climate Change. Doplnené, že sa mení počasie; zdroj hovorí len o poškodení prírody. Heslo nemá na stránke zdroja kotvu, adresa vedie na celú stránku.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/",
+        "title": "Climate Change",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "znasilnenie",
+      "term": "znásilnenie",
+      "forms": [
+        "znásilnenia",
+        "znásilnením",
+        "znásilnení"
+      ],
+      "easy": "Znásilnenie je, keď niekto donúti iného človeka mať s ním sex.\nZnásilnenie je trestný čin.",
+      "domain": "právo",
+      "note": "Anglický výraz: Rape. Druhá veta je doplnená.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Rape",
+        "title": "Rape",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    },
+    {
+      "id": "zvolit",
+      "term": "zvoliť",
+      "forms": [
+        "zvolíte",
+        "zvolia",
+        "zvolený",
+        "zvolená",
+        "zvolení"
+      ],
+      "easy": "Zvoliť znamená rozhodnúť, kto vás bude zastupovať.\nTen človek potom rozhoduje o veciach, ktoré sa vás týkajú.",
+      "domain": "úrad",
+      "note": "Anglický výraz: Elect.",
+      "source": {
+        "name": "Inclusion Europe – Easy-to-read dictionary",
+        "url": "https://www.inclusion-europe.eu/easy-to-read-term/#Elect",
+        "title": "Elect",
+        "fetched": "2026-09-30",
+        "licence": "© Inclusion Europe, použité ako citovaný zdroj"
+      },
+      "status": "draft",
+      "origin": "machine-translated",
+      "added": "2026-09-30",
+      "contributor": "Claude (strojový preklad), athelas64"
+    }
+  ]
+}

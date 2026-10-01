@@ -1,0 +1,7 @@
+{
+  "repo": "athelas64/etr-slovnik",
+  "branch": "main",
+  "manifest": "manifest.json",
+  "check_interval_hours": 24,
+  "note": "dictionary.py update reads manifest.json from this repository and downloads only the files whose sha256 changed. A private repository needs a token: ETR_SLOVNIK_TOKEN, GITHUB_TOKEN, GH_TOKEN, or a logged-in gh CLI."
+}
