@@ -106,7 +106,7 @@ version comparison makes the two copies interchangeable.
 ```
 python <skill>/scripts/dictionary.py lookup easy.md [--json work/dictionary.json]
 python <skill>/scripts/dictionary.py decide "práva" wrong-match --text easy.md --form "práve" --reason "príslovka, v tej chvíli"
-python <skill>/scripts/dictionary.py decide "úrad" used --text easy.md
+python <skill>/scripts/dictionary.py decide "úrad" not-explained --text easy.md --reason "bežné slovo, čitateľ ho pozná"
 python <skill>/scripts/dictionary.py verdicts --text easy.md --markdown     # table for report section 5
 python <skill>/scripts/dictionary.py exclusions [--proposal] [--issue]       # personal exclusions; note for the repository
 python <skill>/scripts/dictionary.py exclusions --remove "práve" --term "práva"
@@ -169,14 +169,15 @@ each, `decide` records one of four verdicts in `work/dictionary-decisions.json`:
 |---|---|---|---|
 | `used` | použité | the explanation fits and is reused | nothing |
 | `rewritten` | prepísané | the right term, explained in the writer's own words | nothing |
+| `not-explained` | nevysvetľujeme | the right term, deliberately left unexplained: an everyday word, part of an official name, an analogy | the report asks the expert to confirm |
 | `wrong-match` | nesúvisí | the word in the text is not this term at all | a personal exclusion, and a proposal note in `work/dictionary-proposals.md` |
 | `other-sense` | iný význam | the term is right, but this body uses it in another sense | a hint to save the writer's explanation with a scope |
 
-`wrong-match` and `other-sense` need `--reason`. A new verdict for a term replaces the
+`not-explained`, `wrong-match` and `other-sense` need `--reason`. A new verdict for a term replaces the
 old one; a `wrong-match` is kept per word form, because the same term can occur once as
 a false match and once for real. `check.py` warns about hits without a verdict; `verdicts
 --markdown` prints the table for section 5 of the companion report; `export --from` leaves
-out the hits judged `wrong-match` or `other-sense`.
+out the hits judged `not-explained`, `wrong-match` or `other-sense`.
 
 **Scope: context that belongs to one body or topic.** An entry may carry
 `"scope": ["minv.sk"]`. A text's scope comes from the host of its source address in the

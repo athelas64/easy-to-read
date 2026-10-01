@@ -148,9 +148,11 @@ explanation the customer approves can go back into the dictionary
 Then the verdict table: paste the output of `dictionary.py verdicts --text <text>.md
 --markdown` with one sentence before it saying that the dictionary finds words, not
 meanings, so every word it found was read in its sentence and judged. The table shows the
-word, its lines, the dictionary, the verdict (použité, prepísané, nesúvisí, iný význam)
-and the reason. A word judged "iný význam" is explained in the text in the sense this
-office uses; ask the expert to confirm that sense. Do not put the proposal for the shared
+word, its lines, the dictionary, the verdict (použité, prepísané, nevysvetľujeme,
+nesúvisí, iný význam) and the reason. A word judged "iný význam" is explained in the
+text in the sense this office uses; ask the expert to confirm that sense. For words
+judged "nevysvetľujeme", ask the expert to confirm the reader needs no explanation, and
+add them to the questions of the reader check. Do not put the proposal for the shared
 dictionary here: it concerns the dictionary's maintainers, not the customer.
 
 ### 6. Obrázky · Obrázky · Pictures

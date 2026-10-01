@@ -5,7 +5,8 @@
         words in the text that a dictionary already explains, each with the sentence it stands in,
         plus long words without an entry
     python dictionary.py decide TERM VERDICT --text EASY.md [--form F] [--reason "..."] [--work work]
-        record whether a dictionary hit fits this text: used | rewritten | wrong-match | other-sense
+        record whether a dictionary hit fits this text:
+        used | rewritten | not-explained | wrong-match | other-sense
     python dictionary.py verdicts --text EASY.md [--work work] [--markdown]
         every hit with its verdict; --markdown gives the table for the companion report
     python dictionary.py exclusions [--proposal] [--issue]
@@ -240,7 +241,8 @@ def text_tokens(md: str) -> list[tuple[int, str]]:
 
 
 # ---------------------------------------------------------------- context: scope and exclusions
-VERDICTS = {"used": "použité", "rewritten": "prepísané", "wrong-match": "nesúvisí", "other-sense": "iný význam"}
+VERDICTS = {"used": "použité", "rewritten": "prepísané", "not-explained": "nevysvetľujeme",
+            "wrong-match": "nesúvisí", "other-sense": "iný význam"}
 
 
 def front_matter(md: str) -> dict[str, str]:
@@ -505,8 +507,8 @@ def render_lookup(path: str, hits: list[dict], missing: list[tuple[int, str]], t
     out.append("")
     out.append("Read each hit in its sentence and decide whether the dictionary's word is the word in the text, "
                "and whether its explanation fits this body and this reader. Record it:")
-    out.append("  dictionary.py decide TERM used|rewritten|wrong-match|other-sense --text EASY.md [--form F] --reason \"...\"")
-    out.append("used = explanation reused · rewritten = right term, own wording · wrong-match = not this word at all "
+    out.append("  dictionary.py decide TERM used|rewritten|not-explained|wrong-match|other-sense --text EASY.md [--form F] --reason \"...\"")
+    out.append("used = explanation reused · rewritten = right term, own wording · not-explained = right term, deliberately left unexplained (an everyday word, an official name, an analogy) · wrong-match = not this word at all "
                "(saves a personal exclusion) · other-sense = this term, but it means something else at this body. "
                "A public or global entry is a starting point, not a reader-checked text.")
     return "\n".join(out) + "\n"
@@ -726,8 +728,8 @@ def cmd_decide(a) -> None:
     h = _match_hit(a.term, hits)
     if not h:
         sys.exit(f"'{a.term}' is not a dictionary hit in {a.text}. Hits: " + (", ".join(x["term"] for x in hits) or "none"))
-    if a.verdict in ("wrong-match", "other-sense") and not a.reason:
-        sys.exit("say why with --reason: what the word means in this sentence")
+    if a.verdict in ("not-explained", "wrong-match", "other-sense") and not a.reason:
+        sys.exit("say why with --reason: what the word means in this sentence, or why it needs no explanation")
     best = h["tiers"][0]
     e = best["entry"]
     occ = h["occurrences"]
@@ -996,7 +998,7 @@ def cmd_export(a) -> None:
         decs = load_decisions(decisions_path(a.from_text, a.work), a.from_text)["decisions"]
         for h in find_in_text(md, tiers, job_scopes(md, a.scope)):
             v = verdict_for(h, decs)
-            if v and v.get("verdict") in ("wrong-match", "other-sense"):
+            if v and v.get("verdict") in ("not-explained", "wrong-match", "other-sense"):
                 print(f"skipped '{h['term']}': verdict {v['verdict']}", file=sys.stderr)
                 continue
             chosen[h["id"]] = h["tiers"][0]["entry"]
@@ -1100,7 +1102,7 @@ def main() -> None:
     s.add_argument("--text", required=True, help="the easy-to-read Markdown file")
     s.add_argument("--form", help="for wrong-match: the word in the text that is not the term")
     s.add_argument("--line", type=int, help="the line the verdict is about, when it matters")
-    s.add_argument("--reason", help="why; required for wrong-match and other-sense")
+    s.add_argument("--reason", help="why; required for not-explained, wrong-match and other-sense")
     s.add_argument("--scope", action="append")
     s.add_argument("--work")
     s.add_argument("--no-exclude", action="store_true", help="wrong-match without saving a personal exclusion")
@@ -1158,7 +1160,7 @@ def main() -> None:
     s.add_argument("--terms", help="comma-separated terms to export")
     s.add_argument("--from", dest="from_text", help="export only the terms found in this easy text")
     s.add_argument("--scope", action="append", help="with --from: body or topic of the text")
-    s.add_argument("--work", help="with --from: work folder with the verdicts (wrong-match and other-sense are left out)")
+    s.add_argument("--work", help="with --from: work folder with the verdicts (not-explained, wrong-match and other-sense are left out)")
     s.add_argument("--out")
     s.add_argument("--lang")
     s.set_defaults(fn=cmd_export)

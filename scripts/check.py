@@ -227,7 +227,7 @@ def add_dictionary_findings(md: str, lang: str, r: dict, easy: str = "", work: s
             undecided += 1
             r["findings"].append((h["lines"][0], "dictionary", "warn",
                                   f"'{h['term']}' matched '{h['occurrences'][0]['form']}' ({where}) and has no verdict: "
-                                  "read it in its sentence, then dictionary.py decide TERM used|rewritten|wrong-match|other-sense"))
+                                  "read it in its sentence, then dictionary.py decide TERM used|rewritten|not-explained|wrong-match|other-sense"))
     r["findings"].sort(key=lambda f: (f[0], f[1]))
     r["stats"]["dictionary_terms"] = len(hits)
     r["stats"]["dictionary_without_verdict"] = undecided

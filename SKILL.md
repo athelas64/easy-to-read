@@ -146,12 +146,16 @@ is lexical: it finds a word, not its meaning. So read every hit in its sentence 
 record a verdict for this text:
 
 ```
-python <skill>/scripts/dictionary.py decide "<term>" used|rewritten|wrong-match|other-sense --text easy.md --reason "..."
+python <skill>/scripts/dictionary.py decide "<term>" used|rewritten|not-explained|wrong-match|other-sense --text easy.md --reason "..."
 ```
 
 - `used`: the dictionary's explanation fits; reuse it (in your own words for a Hurraki
   entry, whose licence would otherwise travel into the customer's text).
 - `rewritten`: the right term, but you explain it in your own words for this reader.
+- `not-explained`: the right term, deliberately left unexplained: an everyday word the
+  reader knows ("úrad"), a word inside an official name (the name of a card), a word in an
+  analogy, the standard opening line. Say why with `--reason`; the report asks the expert
+  to confirm, and the reader check asks about these words.
 - `wrong-match`: the word in the text is not the term at all ("kde práve ste" is not
   "práva"). Name the word with `--form` when several matched. This also saves a personal
   exclusion in the user's dictionary and writes `work/dictionary-proposals.md`, a note
@@ -168,7 +172,7 @@ scope are offered only to texts with the same scope; entries without one apply
 everywhere. When two entries share a term, decide each by the id the lookup shows. An
 entry marked `draft` is a proposal, not a reader-checked text.
 `dictionary.py export --from easy.md` drafts the glossary section from the entries found
-and leaves out the ones judged `wrong-match` or `other-sense`.
+and leaves out the ones judged `not-explained`, `wrong-match` or `other-sense`.
 When the user says "zapamätaj si toto vysvetlenie", "pridaj do slovníka" or asks you to
 remember a word, save it with `dictionary.py add "<term>" --easy "<sentence>
 <sentence>"`;
