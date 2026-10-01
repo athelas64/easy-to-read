@@ -105,6 +105,11 @@ version comparison makes the two copies interchangeable.
 
 ```
 python <skill>/scripts/dictionary.py lookup easy.md [--json work/dictionary.json]
+python <skill>/scripts/dictionary.py decide "práva" wrong-match --text easy.md --form "práve" --reason "príslovka, v tej chvíli"
+python <skill>/scripts/dictionary.py decide "úrad" used --text easy.md
+python <skill>/scripts/dictionary.py verdicts --text easy.md --markdown     # table for report section 5
+python <skill>/scripts/dictionary.py exclusions [--proposal] [--issue]       # personal exclusions; note for the repository
+python <skill>/scripts/dictionary.py exclusions --remove "práve" --term "práva"
 python <skill>/scripts/dictionary.py find "spôsobilosť na právne úkony"
 python <skill>/scripts/dictionary.py add "posudkový lekár" --easy "Posudkový lekár je lekár úradu.\nPozrie sa na správy od vašich lekárov." --forms "posudkoví lekári,posudková lekárka" --domain "sociálne služby" --source https://…
 python <skill>/scripts/dictionary.py export --from easy.md                 # glossary in the skill's Markdown form
@@ -116,8 +121,9 @@ python <skill>/scripts/dictionary.py update --force
 python <skill>/scripts/dictionary.py status
 ```
 
-`check.py` adds an info finding for every term a dictionary explains (turn it off with
-`--no-dictionary`). Matching works in two ways:
+`check.py` adds a finding for every term a dictionary explains: a warning while the hit
+has no verdict, info once it has one (turn it off with `--no-dictionary`). Matching works
+in two ways:
 
 - `term` and `forms` are matched with a light stemmer: one Slovak or Czech inflectional
   ending may differ, so "podnetu" and "podnety" find "podnet" and "na úrade" finds
@@ -149,6 +155,60 @@ the cases that occur, the abbreviation in `same_words`).
 When the user says "zapamätaj si toto vysvetlenie", "pridaj do slovníka" or asks the
 agent to remember a word, the agent runs `add` with the wording from the text.
 
+## Context: verdicts, scope and exclusions
+
+Matching is lexical. It finds "práve" when the dictionary has "práva", and "karta" in
+"občiansky preukaz je karta" when it has "platobná karta". Whether the word in the text
+is the dictionary's term, and whether the explanation fits this body, is a judgement.
+The skill makes that judgement explicit and keeps a record of it.
+
+**Verdicts, per text.** `lookup` shows every hit with the sentence it stands in. For
+each, `decide` records one of four verdicts in `work/dictionary-decisions.json`:
+
+| Verdict | Slovak in the report | Meaning | What else happens |
+|---|---|---|---|
+| `used` | použité | the explanation fits and is reused | nothing |
+| `rewritten` | prepísané | the right term, explained in the writer's own words | nothing |
+| `wrong-match` | nesúvisí | the word in the text is not this term at all | a personal exclusion, and a proposal note in `work/dictionary-proposals.md` |
+| `other-sense` | iný význam | the term is right, but this body uses it in another sense | a hint to save the writer's explanation with a scope |
+
+`wrong-match` and `other-sense` need `--reason`. A new verdict for a term replaces the
+old one; a `wrong-match` is kept per word form, because the same term can occur once as
+a false match and once for real. `check.py` warns about hits without a verdict; `verdicts
+--markdown` prints the table for section 5 of the companion report; `export --from` leaves
+out the hits judged `wrong-match` or `other-sense`.
+
+**Scope: context that belongs to one body or topic.** An entry may carry
+`"scope": ["minv.sk"]`. A text's scope comes from the host of its source address in the
+front matter (`source: https://www.minv.sk/...` gives `minv.sk`), from a `scope:` line
+there (`scope: minv.sk, volby`), and from `--scope`. A scoped entry is offered only to
+texts with a matching scope, and within its tier it wins over a general entry for the
+same term; an entry without a scope applies everywhere. The user dictionary may hold a
+general entry and scoped entries for the same term (`add ... --scope minv.sk`, `remove
+... --scope minv.sk`). Use the website's host for a body and a short word for a topic.
+This keeps the explanation a ministry approved from reaching a municipality's text, where
+the same word may mean something else.
+
+**Exclusions: word forms that are not the term.** Lexical, so they hold wherever the
+form means something else. An entry in any tier may list them in `"exclude":
+["práve"]`. The user's file keeps personal ones in a top-level `exclusions` list, written
+by `decide ... wrong-match`:
+
+```json
+"exclusions": [
+  {"id": "prava", "term": "práva", "form": "práve", "reason": "príslovka, v tej chvíli",
+   "sentence": "Príde domov alebo tam, kde práve ste.", "scope": ["minv.sk"],
+   "text": "lahko-citatelny-text.md", "added": "2026-10-01"}
+]
+```
+
+A personal exclusion applies to all of the writer's texts. Moving it into a shared entry
+is a global change for every body using the dictionary, and for some bodies the match
+may still be right ("v práve" is a form of "právo"). So the skill never submits it on
+its own: `exclusions --proposal` drafts the note with that caveat, `--issue` opens it as
+a GitHub issue when the user asks, and the repository's reviewers decide between a shared
+`exclude`, a scope, or leaving it personal.
+
 ## File schema (all tiers)
 
 ```json
@@ -168,6 +228,8 @@ agent to remember a word, the agent runs `add` with the wording from the text.
       "example": "…",
       "same_words": ["…"],
       "domain": "právo",
+      "scope": ["minv.sk"],
+      "exclude": ["práve"],
       "note": "for the writer, not the reader",
       "source": {"name": "…", "url": "…", "title": "…", "revision": 123, "fetched": "2026-09-29", "licence": "…"},
       "status": "draft | reviewed | reader-checked",
@@ -180,7 +242,9 @@ agent to remember a word, the agent runs `add` with the wording from the text.
 ```
 
 Required: `name`, `tier`, `lang`, `version`, `entries`; `licence` for the public and
-global tiers. In an entry: `id` (ASCII slug, unique in the file), `term`, `easy`.
+global tiers. In an entry: `id` (ASCII slug, unique in the file together with `scope`),
+`term`, `easy`. `scope` and `exclude` are optional; the user file may also hold
+`exclusions` (see "Context" above).
 `easy` follows the writing rules of this skill: one sentence per line, at most 15
 words, no brackets, slashes, dashes, semicolons or paragraph signs, no abbreviations.
 The repository validates this on every pull request (`scripts/validate.py` there) and

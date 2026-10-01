@@ -1,17 +1,33 @@
 #!/usr/bin/env python3
 """Dictionaries of hard words for easy-to-read texts: look up, add, export, update.
 
-    python dictionary.py lookup EASY.md [--lang sk] [--json OUT.json]
-        words in the text that a dictionary already explains, plus long words without an entry
+    python dictionary.py lookup EASY.md [--lang sk] [--json OUT.json] [--scope S] [--work work]
+        words in the text that a dictionary already explains, each with the sentence it stands in,
+        plus long words without an entry
+    python dictionary.py decide TERM VERDICT --text EASY.md [--form F] [--reason "..."] [--work work]
+        record whether a dictionary hit fits this text: used | rewritten | wrong-match | other-sense
+    python dictionary.py verdicts --text EASY.md [--work work] [--markdown]
+        every hit with its verdict; --markdown gives the table for the companion report
+    python dictionary.py exclusions [--proposal] [--issue]
+        your personal exclusions; --proposal drafts the note for the shared repository
     python dictionary.py find TERM [--lang sk]          search every tier
     python dictionary.py add TERM --easy "..." [--forms a,b] [--example "..."] [--domain ...]
-                            [--source URL] [--note "..."] [--lang sk]
-    python dictionary.py remove TERM [--lang sk]
+                            [--scope minv.sk] [--source URL] [--note "..."] [--lang sk]
+    python dictionary.py remove TERM [--scope S] [--lang sk]
     python dictionary.py list [--tier user|public|global] [--lang sk]
     python dictionary.py export [--tier ...] [--format glossary|dl|json] [--terms a,b | --from EASY.md]
     python dictionary.py update [--force]               fetch newer public and global files
     python dictionary.py promote TERM [--issue]          propose a user entry to the shared repository
     python dictionary.py status
+
+Context. A match is lexical: it finds the word, not its meaning. Two things keep it honest.
+Scope: an entry may name the bodies or topics it is meant for ("scope": ["minv.sk"]); it is
+offered only when the text has the same scope, taken from the source address in the text's
+front matter (www.minv.sk -> minv.sk), from a "scope:" line there, or from --scope. Entries
+without a scope apply everywhere. Exclusions: word forms that look like the term but are a
+different word ("práve" is not "práva"); an entry may list them in "exclude", and the user's
+file keeps personal ones in "exclusions". Every hit in a text gets a verdict (decide), kept
+in work/dictionary-decisions.json; check.py warns about hits without one.
 
 Three tiers, looked up in this order:
 
@@ -190,6 +206,14 @@ def _match_at(text_toks: list[str], i: int, key_toks: list[str], exact: bool) ->
     return True
 
 
+def _clean_line(raw: str) -> str:
+    """A Markdown line as the reader sees it: link targets, placeholders and markup removed."""
+    s = re.sub(r"\[([^\]]*)\]\([^)]+\)", r"\1", raw)
+    s = re.sub(r"\[(?:DOPLNIŤ|DOPLNIT|DOPLŇTE|ADD|TODO|OVERIŤ|OVĚŘIT|CHECK)[^\]]*\]", "", s, flags=re.I)
+    s = re.sub(r"<[^>]+>", "", s)
+    return s.lstrip("#>-*+ ").replace("**", "")
+
+
 def text_tokens(md: str) -> list[tuple[int, str]]:
     """(line number, token) for the prose of a Markdown file; headings included, code and
     front matter skipped, link targets and placeholders removed."""
@@ -210,26 +234,94 @@ def text_tokens(md: str) -> list[tuple[int, str]]:
             continue
         if in_code or raw.lstrip().startswith("|") or raw.lstrip().startswith("<"):
             continue
-        s = re.sub(r"\[([^\]]*)\]\([^)]+\)", r"\1", raw)
-        s = re.sub(r"\[(?:DOPLNIŤ|DOPLNIT|DOPLŇTE|ADD|TODO|OVERIŤ|OVĚŘIT|CHECK)[^\]]*\]", "", s, flags=re.I)
-        s = re.sub(r"<[^>]+>", "", s)
-        s = s.lstrip("#>-*+ ").replace("**", "")
-        for m in WORD.finditer(s):
+        for m in WORD.finditer(_clean_line(raw)):
             out.append((i, m.group(0)))
     return out
 
 
-def find_in_text(md: str, tiers: list[dict]) -> list[dict]:
-    """Entries whose term or forms occur in the text. One record per entry id, with the
-    lines where it occurs and every tier that has it (best tier first)."""
+# ---------------------------------------------------------------- context: scope and exclusions
+VERDICTS = {"used": "použité", "rewritten": "prepísané", "wrong-match": "nesúvisí", "other-sense": "iný význam"}
+
+
+def front_matter(md: str) -> dict[str, str]:
+    """The simple `key: value` lines of a Markdown front matter block."""
+    lines = md.split("\n")
+    out: dict[str, str] = {}
+    if lines and lines[0].strip() == "---":
+        for ln in lines[1:]:
+            if ln.strip() == "---":
+                break
+            m = re.match(r"\s*([A-Za-z_][\w-]*)\s*:\s*(.*)$", ln)
+            if m:
+                out[m.group(1).lower()] = m.group(2).strip().strip("\"'")
+    return out
+
+
+def _scope_value(s: str) -> str:
+    s = s.strip().strip("\"'").lower()
+    if "://" in s:
+        from urllib.parse import urlparse
+        s = (urlparse(s).hostname or "").lower()
+    return s[4:] if s.startswith("www.") else s
+
+
+def job_scopes(md: str, extra: list[str] | None = None) -> list[str]:
+    """Scopes of a text: the host of its source address (www.minv.sk -> minv.sk), a
+    `scope:` line in the front matter, and --scope values. Order kept, duplicates dropped."""
+    fm = front_matter(md)
+    raw = []
+    if fm.get("source", "").startswith("http"):
+        raw.append(fm["source"])
+    raw += re.split(r"[,\[\]]", fm.get("scope", ""))
+    for x in extra or []:
+        raw += x.split(",")
+    out = [_scope_value(s) for s in raw if s and s.strip().strip("\"'")]
+    return list(dict.fromkeys(s for s in out if s))
+
+
+def entry_applies(e: dict, scopes: list[str]) -> bool:
+    """An entry without a scope applies everywhere; a scoped entry only where the scopes meet."""
+    sc = {_scope_value(s) for s in (e.get("scope") or [])}
+    return not sc or bool(sc & set(scopes))
+
+
+def personal_exclusions(tiers: list[dict]) -> dict[str, set[str]]:
+    """Entry id -> normalised word forms that must not match it, from the user's file."""
+    out: dict[str, set[str]] = {}
+    for d in tiers:
+        if d.get("tier") != "user":
+            continue
+        for x in d.get("exclusions") or []:
+            if x.get("id") and x.get("form"):
+                out.setdefault(x["id"], set()).add(" ".join(norm(w) for w in WORD.findall(x["form"])))
+    return out
+
+
+def scoped_elsewhere(tiers: list[dict], scopes: list[str]) -> list[dict]:
+    """Scoped entries that do not apply to this text (meant for other bodies or topics)."""
+    return [e for d in tiers for e in d.get("entries", []) if e.get("scope") and not entry_applies(e, scopes)]
+
+
+def find_in_text(md: str, tiers: list[dict], scopes: list[str] | None = None,
+                 exclusions: dict[str, set[str]] | None = None) -> list[dict]:
+    """Entries whose term or forms occur in the text. One record per entry id, with every
+    occurrence (line, matched words, the sentence) and every tier that has it (best first).
+    Scoped entries count only when the text has the same scope; word forms listed in an
+    entry's `exclude` or in the user's personal exclusions are not matches."""
+    scopes = scopes or []
+    exclusions = exclusions if exclusions is not None else personal_exclusions(tiers)
     toks = text_tokens(md)
     words = [t for _, t in toks]
+    src_lines = md.split("\n")
     hits: dict[str, dict] = {}
     for d in tiers:
         tier = d.get("tier", "global")
         for e in d.get("entries", []):
-            lines: list[int] = []
-            matched_key = None
+            if not entry_applies(e, scopes):
+                continue
+            excl = {" ".join(norm(w) for w in WORD.findall(x)) for x in (e.get("exclude") or [])} | exclusions.get(e["id"], set())
+            spans: set[tuple[int, int]] = set()  # (first token, number of tokens) of each match
+            skipped = 0
             # term and forms: inflection-aware; same_words (synonyms, abbreviations): exact words only
             candidates = [(k, False) for k in entry_keys(e)] + [(k, True) for k in entry_synonyms(e)]
             for key, syn in candidates:
@@ -242,19 +334,77 @@ def find_in_text(md: str, tiers: list[dict]) -> list[dict]:
                         ok = i + len(kt) <= len(words) and all(norm(words[i + j]) == norm(k) for j, k in enumerate(kt))
                     else:
                         ok = _match_at(words, i, kt, exact)
-                    if ok:
-                        lines.append(toks[i][0])
-                        matched_key = matched_key or key
-            if not lines:
+                    if not ok:
+                        continue
+                    if " ".join(norm(w) for w in words[i:i + len(kt)]) in excl:
+                        skipped += 1
+                        continue
+                    spans.add((i, len(kt)))
+            # a longer form and the bare word can match the same place ("na úrade", "úrade"): keep the longest
+            spans = {(i, n) for i, n in spans if not any(j <= i and i + n <= j + m and (j, m) != (i, n) for j, m in spans)}
+            if not spans:
                 continue
-            lines = sorted(set(lines))
-            rec = hits.setdefault(e["id"], {"id": e["id"], "term": e["term"], "lines": lines, "matched": matched_key, "tiers": []})
-            rec["lines"] = sorted(set(rec["lines"]) | set(lines))
+            occurrences = []
+            for i, n in sorted(spans):
+                ln = toks[i][0]
+                occurrences.append({"line": ln, "form": " ".join(words[i:i + n]),
+                                    "sentence": _clean_line(src_lines[ln - 1]).strip()})
+            rec = hits.setdefault(e["id"], {"id": e["id"], "term": e["term"], "lines": [], "occurrences": [],
+                                            "matched": occurrences[0]["form"], "excluded": 0, "tiers": []})
+            seen = {(o["line"], o["form"]) for o in rec["occurrences"]}
+            rec["occurrences"] += [o for o in occurrences if (o["line"], o["form"]) not in seen]
+            rec["occurrences"].sort(key=lambda o: (o["line"], o["form"]))
+            rec["lines"] = sorted({o["line"] for o in rec["occurrences"]})
+            rec["excluded"] += skipped
             rec["tiers"].append({"tier": tier, "file": Path(d["_path"]).name, "entry": e,
                                  "licence": (d.get("licence") or {}).get("name")})
     for rec in hits.values():
-        rec["tiers"].sort(key=lambda t: TIER_ORDER.get(t["tier"], 9))
+        # best tier first; within a tier, an entry scoped to this text before a general one
+        rec["tiers"].sort(key=lambda t: (TIER_ORDER.get(t["tier"], 9), 0 if t["entry"].get("scope") else 1))
     return sorted(hits.values(), key=lambda r: (r["lines"][0], r["term"]))
+
+
+# ---------------------------------------------------------------- verdicts for one text
+def decisions_path(easy: str, work: str | None = None) -> Path:
+    if work:
+        return Path(work) / "dictionary-decisions.json"
+    cand = Path(easy).resolve().parent / "work"
+    return (cand if cand.is_dir() else Path("work")) / "dictionary-decisions.json"
+
+
+def read_decisions_file(path: Path) -> dict:
+    """{"texts": {"<file name>": {"scope": [...], "updated": ..., "decisions": [...]}}}: verdicts are
+    kept per text, so two texts sharing a work folder never borrow each other's verdicts."""
+    if path.exists():
+        try:
+            data = json.loads(read_text(path))
+            if isinstance(data.get("texts"), dict):
+                return data
+        except Exception as e:  # noqa: BLE001
+            print(f"warning: {path} is not readable ({e}); starting a new record", file=sys.stderr)
+    return {"texts": {}}
+
+
+def load_decisions(path: Path, easy: str | None = None) -> dict:
+    """The verdicts recorded for one text (by file name); with no text, all of them."""
+    data = read_decisions_file(path)
+    if easy is None:
+        return {"decisions": [x for t in data["texts"].values() for x in t.get("decisions", [])]}
+    return data["texts"].get(Path(easy).name, {"decisions": []})
+
+
+def verdict_for(hit: dict, decisions: list[dict]) -> dict | None:
+    """The decision that covers a hit: the latest used/rewritten/other-sense for its id, or
+    wrong-match decisions that cover every form still matched."""
+    ds = [x for x in decisions if x.get("id") == hit["id"]]
+    main = [x for x in ds if x.get("verdict") != "wrong-match"]
+    if main:
+        return main[-1]
+    forms = {norm(o["form"]) for o in hit.get("occurrences", [])}
+    wrong = {norm(x.get("form", "")) for x in ds if x.get("verdict") == "wrong-match"}
+    if ds and forms and forms <= wrong:
+        return ds[-1]
+    return None
 
 
 def long_words_without_entry(md: str, hits: list[dict], min_len: int = 12) -> list[tuple[int, str]]:
@@ -307,12 +457,17 @@ def glossary_md(entries: list[dict], fmt: str = "glossary") -> str:
     return "\n".join(out).rstrip() + "\n"
 
 
-def render_lookup(path: str, hits: list[dict], missing: list[tuple[int, str]], tiers: list[dict]) -> str:
+def render_lookup(path: str, hits: list[dict], missing: list[tuple[int, str]], tiers: list[dict],
+                  scopes: list[str] | None = None, decisions: list[dict] | None = None, elsewhere: int = 0) -> str:
     out = [f"# Dictionary lookup: {Path(path).name}", ""]
     names = ", ".join(f"{d.get('tier')} ({Path(d['_path']).name}, {len(d.get('entries', []))} entries)" for d in tiers)
     out.append(f"Dictionaries: {names or 'none'}")
+    out.append(f"Scope of this text: {', '.join(scopes) if scopes else 'none (scoped entries are not offered)'}"
+               + (f" · {elsewhere} scoped entries are meant for other bodies or topics and were left out" if elsewhere else ""))
     out.append("")
-    out.append(f"## Words the dictionaries explain ({len(hits)})")
+    decisions = decisions or []
+    open_n = sum(1 for h in hits if not verdict_for(h, decisions))
+    out.append(f"## Words the dictionaries explain ({len(hits)}, {open_n} without a verdict)")
     out.append("")
     if not hits:
         out.append("- none")
@@ -320,14 +475,24 @@ def render_lookup(path: str, hits: list[dict], missing: list[tuple[int, str]], t
         best = h["tiers"][0]
         e = best["entry"]
         others = ", ".join(t["tier"] for t in h["tiers"][1:])
-        lines = ", ".join(str(x) for x in h["lines"][:8]) + (" ..." if len(h["lines"]) > 8 else "")
         status = e.get("status", "draft")
         flag = "" if status != "draft" else " · draft, check before reuse"
         lic = f" · {best['licence']}" if best.get("licence") else ""
-        out.append(f"- **{e['term']}** · lines {lines} · {best['tier']}{lic}{flag}" + (f" · also in {others}" if others else ""))
+        sc = f" · scope {', '.join(e['scope'])}" if e.get("scope") else ""
+        v = verdict_for(h, decisions)
+        verdict = f" · verdict: {v['verdict']}" if v else " · NO VERDICT YET"
+        out.append(f"- **{e['term']}** · id {h['id']} · {best['tier']}{lic}{sc}{flag}" + (f" · also in {others}" if others else "") + verdict)
+        out.append("    In the text:")
+        for o in h["occurrences"][:4]:
+            out.append(f"      line {o['line']} ({o['form']}): {o['sentence']}")
+        if len(h["occurrences"]) > 4:
+            out.append(f"      ... {len(h['occurrences']) - 4} more")
+        if h.get("excluded"):
+            out.append(f"    {h['excluded']} occurrence(s) skipped as excluded word forms")
+        out.append("    Dictionary explanation:")
         for ln in e["easy"].split("\n"):
             if ln.strip():
-                out.append(f"    {ln}")
+                out.append(f"      {ln}")
         if e.get("note"):
             out.append(f"    Note for the writer: {e['note']}")
     out.append("")
@@ -338,8 +503,12 @@ def render_lookup(path: str, hits: list[dict], missing: list[tuple[int, str]], t
     for ln, w in missing[:40]:
         out.append(f"- line {ln}: {w}")
     out.append("")
-    out.append("Reuse an explanation only when it fits the reader and the context; a public or global entry is "
-               "a starting point, not a reader-checked text. `dictionary.py add` saves your own explanation.")
+    out.append("Read each hit in its sentence and decide whether the dictionary's word is the word in the text, "
+               "and whether its explanation fits this body and this reader. Record it:")
+    out.append("  dictionary.py decide TERM used|rewritten|wrong-match|other-sense --text EASY.md [--form F] --reason \"...\"")
+    out.append("used = explanation reused · rewritten = right term, own wording · wrong-match = not this word at all "
+               "(saves a personal exclusion) · other-sense = this term, but it means something else at this body. "
+               "A public or global entry is a starting point, not a reader-checked text.")
     return "\n".join(out) + "\n"
 
 
@@ -453,26 +622,250 @@ def update(force: bool = False, quiet: bool = False) -> str:
     return f"dictionaries are current (manifest version {manifest.get('version')})"
 
 
+# ---------------------------------------------------------------- personal exclusions and proposals
+TIER_SK = {"user": "vlastný", "public": "verejná správa", "global": "globálny"}
+
+PROPOSAL_CAVEAT = (
+    "> Upozornenie: vylúčenie v spoločnom slovníku je globálna zmena. Platí pre všetky úrady a všetky texty,\n"
+    "> ktoré slovník používajú. Pre niektoré orgány môže byť kontext stále správny: ten istý tvar môže v ich\n"
+    "> textoch naozaj znamenať heslo zo slovníka. Pred zlúčením posúďte, či nestačí osobné vylúčenie\n"
+    "> autora alebo obmedzenie hesla rozsahom (scope) na konkrétny úrad či tému.\n")
+
+
+def add_personal_exclusion(lang: str, rec: dict) -> tuple[Path, bool]:
+    """Save a word form that is not the given entry into the user's file. Returns (path, added)."""
+    p = user_path(lang)
+    d = (_load(p) if p.exists() else None) or new_user_file(lang)
+    ex = d.setdefault("exclusions", [])
+    if any(x.get("id") == rec["id"] and norm(x.get("form", "")) == norm(rec["form"]) for x in ex):
+        return p, False
+    ex.append(rec)
+    ex.sort(key=lambda x: (norm(x.get("term", "")), norm(x.get("form", ""))))
+    save_user(d, lang)
+    return p, True
+
+
+def proposal_md(items: list[dict]) -> str:
+    """The note proposing exclusions to the shared repository, with the caveat that it is a global change."""
+    out = ["# Návrh vylúčení pre spoločný slovník etr-slovnik", "",
+           "Pri tvorbe ľahko čitateľného textu slovník označil slovo, ktoré nie je heslom zo slovníka.",
+           "Autor si tvar vylúčil vo vlastnom slovníku. Navrhuje zvážiť rovnaké vylúčenie v spoločnom slovníku.", "",
+           PROPOSAL_CAVEAT]
+    for x in items:
+        out.append(f"## {x.get('term')} · heslo `{x.get('id')}` · {x.get('file', '?')}")
+        out.append("")
+        out.append(f"- Vylúčiť tvar: **{x.get('form')}**")
+        if x.get("sentence"):
+            out.append(f"- Veta z textu: {x['sentence']}")
+        if x.get("reason"):
+            out.append(f"- Dôvod: {x['reason']}")
+        if x.get("scope"):
+            out.append(f"- Zistené v texte pre: {', '.join(x['scope'])}")
+        out.append(f"- Navrhovaná zmena hesla: `\"exclude\": [\"{x.get('form')}\"]`")
+        out.append("")
+    return "\n".join(out).rstrip() + "\n"
+
+
+def write_job_proposals(dp: Path) -> Path | None:
+    """work/dictionary-proposals.md: wrong matches of shared entries from the texts in this work folder."""
+    items = [dict(x, scope=t.get("scope", [])) for t in read_decisions_file(dp)["texts"].values()
+             for x in t.get("decisions", []) if x.get("verdict") == "wrong-match" and x.get("tier") in ("public", "global")]
+    target = dp.parent / "dictionary-proposals.md"
+    if not items:
+        if target.exists():
+            target.unlink()
+        return None
+    write_text(target, proposal_md(items))
+    return target
+
+
 # ---------------------------------------------------------------- commands
+def _hits_for(easy: str, lang: str, scope_args: list[str] | None):
+    tiers = load_tiers(lang)
+    md = read_text(easy)
+    scopes = job_scopes(md, scope_args)
+    return tiers, md, scopes, find_in_text(md, tiers, scopes)
+
+
 def cmd_lookup(a) -> None:
     lang = base_lang(a.lang)
     msg = update(quiet=True)
     if a.verbose:
         print(msg, file=sys.stderr)
-    tiers = load_tiers(lang)
-    md = read_text(a.easy)
-    hits = find_in_text(md, tiers)
+    tiers, md, scopes, hits = _hits_for(a.easy, lang, a.scope)
+    decisions = load_decisions(decisions_path(a.easy, a.work), a.easy)["decisions"]
     missing = long_words_without_entry(md, hits)
-    print(render_lookup(a.easy, hits, missing, tiers))
+    print(render_lookup(a.easy, hits, missing, tiers, scopes, decisions, len(scoped_elsewhere(tiers, scopes))))
     if a.json:
         write_text(a.json, json.dumps({
             "lang": lang,
+            "scope": scopes,
             "dictionaries": [{"tier": d.get("tier"), "file": Path(d["_path"]).name, "version": d.get("version"),
                               "entries": len(d.get("entries", [])), "licence": (d.get("licence") or {}).get("name")} for d in tiers],
-            "found": [{"id": h["id"], "term": h["term"], "lines": h["lines"],
+            "found": [{"id": h["id"], "term": h["term"], "lines": h["lines"], "occurrences": h["occurrences"],
+                       "excluded": h["excluded"], "verdict": (verdict_for(h, decisions) or {}).get("verdict"),
                        "tiers": [{"tier": t["tier"], "file": t["file"], "licence": t["licence"], "entry": t["entry"]} for t in h["tiers"]]} for h in hits],
             "long_words_without_entry": [{"line": ln, "word": w} for ln, w in missing],
         }, ensure_ascii=False, indent=2) + "\n")
+
+
+def _match_hit(term: str, hits: list[dict]) -> dict | None:
+    q = norm(term.strip())
+    for h in hits:
+        if h["id"] == slug(term) or norm(h["term"]) == q:
+            return h
+    for h in hits:
+        if any(norm(o["form"]) == q for o in h["occurrences"]):
+            return h
+    return None
+
+
+def cmd_decide(a) -> None:
+    lang = base_lang(a.lang)
+    tiers, md, scopes, hits = _hits_for(a.text, lang, a.scope)
+    h = _match_hit(a.term, hits)
+    if not h:
+        sys.exit(f"'{a.term}' is not a dictionary hit in {a.text}. Hits: " + (", ".join(x["term"] for x in hits) or "none"))
+    if a.verdict in ("wrong-match", "other-sense") and not a.reason:
+        sys.exit("say why with --reason: what the word means in this sentence")
+    best = h["tiers"][0]
+    e = best["entry"]
+    occ = h["occurrences"]
+    form = None
+    if a.verdict == "wrong-match":
+        forms = list(dict.fromkeys(o["form"] for o in occ))
+        if a.form:
+            if norm(a.form) not in {norm(f) for f in forms}:
+                sys.exit(f"'{a.form}' is not among the matched words: {', '.join(forms)}")
+            form = next(f for f in forms if norm(f) == norm(a.form))
+        elif len(forms) == 1:
+            form = forms[0]
+        else:
+            sys.exit(f"several words matched ({', '.join(forms)}); name the wrong one with --form")
+        occ = [o for o in occ if norm(o["form"]) == norm(form)]
+    if a.line:
+        occ = [o for o in occ if o["line"] == a.line] or occ
+    rec = {"id": h["id"], "term": h["term"], "verdict": a.verdict, "verdict_sk": VERDICTS[a.verdict],
+           "lines": [o["line"] for o in occ], "sentence": occ[0]["sentence"], "tier": best["tier"], "file": best["file"],
+           "status": e.get("status", "draft"), "reason": a.reason or "", "date": date.today().isoformat()}
+    if form:
+        rec["form"] = form
+    if e.get("scope"):
+        rec["entry_scope"] = e["scope"]
+    dp = decisions_path(a.text, a.work)
+    all_data = read_decisions_file(dp)
+    data = all_data["texts"].setdefault(Path(a.text).name, {"decisions": []})
+
+    def replaced(x: dict) -> bool:
+        if x.get("id") != h["id"]:
+            return False
+        if a.verdict == "wrong-match":
+            return x.get("verdict") == "wrong-match" and norm(x.get("form", "")) == norm(form)
+        return x.get("verdict") != "wrong-match"
+
+    data["decisions"] = [x for x in data.get("decisions", []) if not replaced(x)] + [rec]
+    data.update({"scope": scopes, "updated": datetime.now().isoformat(timespec="seconds")})
+    dp.parent.mkdir(parents=True, exist_ok=True)
+    write_text(dp, json.dumps(all_data, ensure_ascii=False, indent=2) + "\n")
+    print(f"{h['term']}: {a.verdict} ({VERDICTS[a.verdict]}) recorded in {dp}")
+    if a.verdict == "wrong-match":
+        if not a.no_exclude:
+            up, added = add_personal_exclusion(lang, {
+                "id": h["id"], "term": h["term"], "form": form, "reason": a.reason, "sentence": rec["sentence"],
+                "scope": scopes, "text": Path(a.text).name, "added": date.today().isoformat()})
+            print(f"  personal exclusion {'saved' if added else 'already there'}: '{form}' is not '{h['term']}' ({up})")
+        prop = write_job_proposals(dp)
+        if prop:
+            print(f"  proposal for the shared dictionary written to {prop} (a global change; tell the user, do not submit unasked)")
+    elif a.verdict == "other-sense":
+        sc = scopes[0] if scopes else "<body or topic>"
+        print(f"  write your own explanation in the text; to reuse it for this body next time:\n"
+              f"  dictionary.py add \"{h['term']}\" --easy \"...\" --scope {sc}   (only when the user agrees)")
+
+
+def cmd_verdicts(a) -> None:
+    lang = base_lang(a.lang)
+    tiers, md, scopes, hits = _hits_for(a.text, lang, a.scope)
+    decs = load_decisions(decisions_path(a.text, a.work), a.text)["decisions"]
+    rows = []
+    for h in hits:
+        v = verdict_for(h, decs)
+        best = h["tiers"][0]
+        rows.append({"id": h["id"], "term": h["term"], "lines": h["lines"], "tier": best["tier"], "file": best["file"],
+                     "verdict": v["verdict"] if v else None, "reason": (v or {}).get("reason", ""), "form": None})
+    hit_ids = {h["id"] for h in hits}
+    for x in decs:  # wrong matches no longer show up as hits once excluded; list them anyway
+        if x.get("verdict") == "wrong-match" and not (x["id"] in hit_ids and any(r["term"] == x["term"] and r["verdict"] == "wrong-match" for r in rows)):
+            rows.append({"id": x["id"], "term": x["term"], "lines": x.get("lines", []), "tier": x.get("tier"), "file": x.get("file"),
+                         "verdict": "wrong-match", "reason": x.get("reason", ""), "form": x.get("form")})
+    rows.sort(key=lambda r: (r["lines"][0] if r["lines"] else 0, r["term"]))
+    open_n = sum(1 for r in rows if not r["verdict"])
+    # two entries can share a term (one per dictionary); then the id tells them apart
+    dup = {t for t in (r["term"] for r in rows) if sum(1 for x in rows if x["term"] == t and not x["form"]) > 1}
+    for r in rows:
+        r["label"] = f"{r['term']} ({r['id']})" if r["term"] in dup and not r["form"] else r["term"]
+    if a.markdown:
+        print("| Slovo v texte | Riadok | Slovník | Rozhodnutie | Dôvod |")
+        print("|---|---|---|---|---|")
+        for r in rows:
+            word = f"{r['form']} (nie heslo {r['term']})" if r["form"] else r["label"]
+            lines = ", ".join(str(x) for x in r["lines"][:6])
+            verdict = VERDICTS.get(r["verdict"], "bez rozhodnutia") if r["verdict"] else "**bez rozhodnutia**"
+            print(f"| {word} | {lines} | {TIER_SK.get(r['tier'], r['tier'])} | {verdict} | {r['reason'].replace('|', '/')} |")
+        return
+    print(f"# Verdicts for {Path(a.text).name} · scope {', '.join(scopes) or 'none'} · {len(rows)} hits, {open_n} without a verdict")
+    for r in rows:
+        word = f"{r['form']} -> not '{r['term']}'" if r["form"] else r["label"]
+        print(f"- {word} · lines {', '.join(str(x) for x in r['lines'][:6])} · {r['tier']} · {r['verdict'] or 'NO VERDICT'}"
+              + (f" · {r['reason']}" if r["reason"] else ""))
+
+
+def cmd_exclusions(a) -> None:
+    lang = base_lang(a.lang)
+    p = user_path(lang)
+    d = _load(p) if p.exists() else None
+    ex = (d or {}).get("exclusions") or []
+    if a.remove:
+        if not d:
+            sys.exit(f"no user dictionary at {p}")
+        keep = [x for x in ex if not (norm(x.get("form", "")) == norm(a.remove) and (not a.term or x.get("id") == slug(a.term) or norm(x.get("term", "")) == norm(a.term)))]
+        if len(keep) == len(ex):
+            sys.exit(f"no personal exclusion '{a.remove}'" + (f" for '{a.term}'" if a.term else ""))
+        d["exclusions"] = keep
+        save_user(d, lang)
+        print(f"removed {len(ex) - len(keep)} personal exclusion(s) '{a.remove}' from {p}")
+        return
+    if not ex:
+        print(f"no personal exclusions in {p}")
+        return
+    shared = {e["id"]: Path(t["_path"]).name for t in load_tiers(lang) if t.get("tier") in ("public", "global")
+              for e in t.get("entries", [])}
+    if not (a.proposal or a.issue):
+        print(f"# Personal exclusions ({len(ex)}) · {p}")
+        for x in ex:
+            where = shared.get(x["id"], "your own entry")
+            print(f"- '{x.get('form')}' is not '{x.get('term')}' ({where}) · {x.get('reason', '')} · {x.get('text', '')} {x.get('added', '')}")
+        return
+    items = [dict(x, file=shared[x["id"]]) for x in ex if x.get("id") in shared]
+    if not items:
+        print("no personal exclusion concerns a shared entry; nothing to propose")
+        return
+    body = proposal_md(items)
+    print(body)
+    if a.issue:
+        src = sources()
+        gh = shutil.which("gh")
+        if not gh:
+            sys.exit("gh (GitHub CLI) is not installed; paste the text above into a new issue at https://github.com/" + src["repo"] + "/issues/new")
+        tmp = cache_dir() / "exclusion-proposal.md"
+        write_text(tmp, body)
+        title = f"Návrh vylúčenia: {items[0]['form']} (heslo {items[0]['term']})" if len(items) == 1 else f"Návrh vylúčení zo slovníka ({len(items)})"
+        r = subprocess.run([gh, "issue", "create", "--repo", src["repo"], "--title", title, "--body-file", str(tmp),
+                            "--label", "návrh vylúčenia"], capture_output=True, text=True)
+        if r.returncode != 0 and "not found" in (r.stderr or "").lower():
+            r = subprocess.run([gh, "issue", "create", "--repo", src["repo"], "--title", title, "--body-file", str(tmp)],
+                               capture_output=True, text=True)
+        print(r.stdout.strip() or r.stderr.strip())
 
 
 def cmd_find(a) -> None:
@@ -482,9 +875,12 @@ def cmd_find(a) -> None:
         print(f"no entry for '{a.term}'")
         return
     for tier, d, e in res:
-        print(f"## {e['term']} · {tier} · {Path(d['_path']).name} · {e.get('status', 'draft')}")
+        sc = f" · scope {', '.join(e['scope'])}" if e.get("scope") else ""
+        print(f"## {e['term']} · {tier} · {Path(d['_path']).name} · {e.get('status', 'draft')}{sc}")
         if e.get("forms"):
             print("forms: " + ", ".join(e["forms"]))
+        if e.get("exclude"):
+            print("not these words: " + ", ".join(e["exclude"]))
         print(e["easy"])
         if e.get("example"):
             print("Example:\n" + e["example"])
@@ -513,19 +909,31 @@ def cmd_add(a) -> None:
         e["note"] = a.note
     if a.source:
         e["source"] = {"url": a.source} if a.source.startswith("http") else {"name": a.source}
+    scope = _scope_list(a.scope)
+    if scope:
+        e["scope"] = scope
     e["status"] = "draft"
     e["origin"] = "human"
     e["added"] = date.today().isoformat()
-    existing = [x for x in d["entries"] if x["id"] == e["id"]]
-    if existing and not a.replace:
-        sys.exit(f"'{a.term}' is already in {p}; use --replace to overwrite it")
-    d["entries"] = [x for x in d["entries"] if x["id"] != e["id"]] + [e]
-    d["entries"].sort(key=lambda x: norm(x["term"]))
+    # one entry per term and scope: the same term may have a general entry and entries for particular bodies
+    same = lambda x: x["id"] == e["id"] and _scope_key(x) == _scope_key(e)  # noqa: E731
+    if any(same(x) for x in d["entries"]) and not a.replace:
+        sys.exit(f"'{a.term}'{' for ' + ', '.join(scope) if scope else ''} is already in {p}; use --replace to overwrite it")
+    d["entries"] = [x for x in d["entries"] if not same(x)] + [e]
+    d["entries"].sort(key=lambda x: (norm(x["term"]), _scope_key(x)))
     warn = check_easy(easy)
     saved = save_user(d, lang)
-    print(f"added '{e['term']}' to {saved} ({len(d['entries'])} entries)")
+    print(f"added '{e['term']}'{' for ' + ', '.join(scope) if scope else ''} to {saved} ({len(d['entries'])} entries)")
     for w in warn:
         print("  note: " + w)
+
+
+def _scope_list(raw: str | None) -> list[str]:
+    return list(dict.fromkeys(_scope_value(s) for s in (raw or "").split(",") if s.strip()))
+
+
+def _scope_key(e: dict) -> tuple:
+    return tuple(sorted(_scope_value(s) for s in (e.get("scope") or [])))
 
 
 def check_easy(easy: str) -> list[str]:
@@ -548,11 +956,18 @@ def cmd_remove(a) -> None:
     if not d:
         sys.exit(f"no user dictionary at {p}")
     before = len(d["entries"])
-    d["entries"] = [x for x in d["entries"] if x["id"] != slug(a.term) and norm(x["term"]) != norm(a.term)]
+    scope = tuple(sorted(_scope_list(a.scope)))
+
+    def target(x: dict) -> bool:
+        if x["id"] != slug(a.term) and norm(x["term"]) != norm(a.term):
+            return False
+        return a.scope is None or _scope_key(x) == scope
+
+    d["entries"] = [x for x in d["entries"] if not target(x)]
     if len(d["entries"]) == before:
-        sys.exit(f"'{a.term}' is not in {p}")
+        sys.exit(f"'{a.term}'{' for ' + a.scope if a.scope else ''} is not in {p}")
     save_user(d, lang)
-    print(f"removed '{a.term}' from {p}")
+    print(f"removed {before - len(d['entries'])} entry/entries '{a.term}' from {p}")
 
 
 def cmd_list(a) -> None:
@@ -563,7 +978,10 @@ def cmd_list(a) -> None:
         print(f"## {d.get('name')} · {d.get('tier')} · version {d.get('version')} · {len(d.get('entries', []))} entries · {d['_path']}")
         for e in sorted(d.get("entries", []), key=lambda x: norm(x["term"])):
             first = e["easy"].split("\n")[0]
-            print(f"- {e['term']} [{e.get('status', 'draft')}]: {first}")
+            sc = f" (scope {', '.join(e['scope'])})" if e.get("scope") else ""
+            print(f"- {e['term']}{sc} [{e.get('status', 'draft')}]: {first}")
+        if d.get("exclusions"):
+            print(f"  personal exclusions: {len(d['exclusions'])} (dictionary.py exclusions)")
         print()
 
 
@@ -574,7 +992,13 @@ def cmd_export(a) -> None:
         tiers = [d for d in tiers if d.get("tier") == a.tier]
     chosen: dict[str, dict] = {}
     if a.from_text:
-        for h in find_in_text(read_text(a.from_text), tiers):
+        md = read_text(a.from_text)
+        decs = load_decisions(decisions_path(a.from_text, a.work), a.from_text)["decisions"]
+        for h in find_in_text(md, tiers, job_scopes(md, a.scope)):
+            v = verdict_for(h, decs)
+            if v and v.get("verdict") in ("wrong-match", "other-sense"):
+                print(f"skipped '{h['term']}': verdict {v['verdict']}", file=sys.stderr)
+                continue
             chosen[h["id"]] = h["tiers"][0]["entry"]
     elif a.terms:
         for t in a.terms.split(","):
@@ -661,12 +1085,43 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
 
-    s = sub.add_parser("lookup", help="terms in an easy text that a dictionary explains")
+    s = sub.add_parser("lookup", help="terms in an easy text that a dictionary explains, with their sentences")
     s.add_argument("easy")
     s.add_argument("--lang")
     s.add_argument("--json")
+    s.add_argument("--scope", action="append", help="body or topic of the text, besides the source address (repeatable)")
+    s.add_argument("--work", help="work folder with dictionary-decisions.json (default: work next to the text)")
     s.add_argument("--verbose", action="store_true", help="also print the update check result")
     s.set_defaults(fn=cmd_lookup)
+
+    s = sub.add_parser("decide", help="record whether a dictionary hit fits this text")
+    s.add_argument("term", help="the dictionary term (or the word as it stands in the text)")
+    s.add_argument("verdict", choices=list(VERDICTS))
+    s.add_argument("--text", required=True, help="the easy-to-read Markdown file")
+    s.add_argument("--form", help="for wrong-match: the word in the text that is not the term")
+    s.add_argument("--line", type=int, help="the line the verdict is about, when it matters")
+    s.add_argument("--reason", help="why; required for wrong-match and other-sense")
+    s.add_argument("--scope", action="append")
+    s.add_argument("--work")
+    s.add_argument("--no-exclude", action="store_true", help="wrong-match without saving a personal exclusion")
+    s.add_argument("--lang")
+    s.set_defaults(fn=cmd_decide)
+
+    s = sub.add_parser("verdicts", help="every hit in a text with its verdict")
+    s.add_argument("--text", required=True)
+    s.add_argument("--markdown", action="store_true", help="the table for the companion report (Slovak headings)")
+    s.add_argument("--scope", action="append")
+    s.add_argument("--work")
+    s.add_argument("--lang")
+    s.set_defaults(fn=cmd_verdicts)
+
+    s = sub.add_parser("exclusions", help="your personal exclusions; propose them to the shared repository")
+    s.add_argument("--proposal", action="store_true", help="draft the note for the shared repository (a global change)")
+    s.add_argument("--issue", action="store_true", help="open a GitHub issue with the proposal (gh)")
+    s.add_argument("--remove", metavar="FORM", help="delete a personal exclusion")
+    s.add_argument("--term", help="with --remove: only for this term")
+    s.add_argument("--lang")
+    s.set_defaults(fn=cmd_exclusions)
 
     s = sub.add_parser("find", help="search all tiers for a term")
     s.add_argument("term")
@@ -681,12 +1136,14 @@ def main() -> None:
     s.add_argument("--domain")
     s.add_argument("--source", help="URL or name of where the explanation comes from")
     s.add_argument("--note")
+    s.add_argument("--scope", help="comma-separated bodies or topics this explanation is meant for (e.g. minv.sk)")
     s.add_argument("--lang")
     s.add_argument("--replace", action="store_true")
     s.set_defaults(fn=cmd_add)
 
     s = sub.add_parser("remove", help="remove a term from your own dictionary")
     s.add_argument("term")
+    s.add_argument("--scope", help="only the entry with exactly this scope ('' for the general one)")
     s.add_argument("--lang")
     s.set_defaults(fn=cmd_remove)
 
@@ -700,6 +1157,8 @@ def main() -> None:
     s.add_argument("--format", choices=["glossary", "dl", "json"], default="glossary")
     s.add_argument("--terms", help="comma-separated terms to export")
     s.add_argument("--from", dest="from_text", help="export only the terms found in this easy text")
+    s.add_argument("--scope", action="append", help="with --from: body or topic of the text")
+    s.add_argument("--work", help="with --from: work folder with the verdicts (wrong-match and other-sense are left out)")
     s.add_argument("--out")
     s.add_argument("--lang")
     s.set_defaults(fn=cmd_export)

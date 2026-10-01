@@ -145,6 +145,14 @@ customer knows other offices explain the word the same way) and which are new; a
 explanation the customer approves can go back into the dictionary
 (`dictionary.py add`, then `promote`).
 
+Then the verdict table: paste the output of `dictionary.py verdicts --text <text>.md
+--markdown` with one sentence before it saying that the dictionary finds words, not
+meanings, so every word it found was read in its sentence and judged. The table shows the
+word, its lines, the dictionary, the verdict (použité, prepísané, nesúvisí, iný význam)
+and the reason. A word judged "iný význam" is explained in the text in the sense this
+office uses; ask the expert to confirm that sense. Do not put the proposal for the shared
+dictionary here: it concerns the dictionary's maintainers, not the customer.
+
 ### 6. Obrázky · Obrázky · Pictures
 
 The image brief from `images.md`: the style line, the number of pictures, who supplies

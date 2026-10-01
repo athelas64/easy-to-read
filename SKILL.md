@@ -140,12 +140,35 @@ python <skill>/scripts/dictionary.py lookup easy.md
 ```
 
 It lists the words in your text that a dictionary already explains (the user's own
-dictionary first, then the shared public-sector dictionary, then the Hurraki-derived
-one) and the long words nobody has explained yet. Reuse a shared explanation when it
-fits the reader and the context, and rewrite it in your own words when it does not; an
-entry marked `draft` is a proposal, not a reader-checked text, and a Hurraki entry may
-not be copied word for word into a customer text (its licence would travel with it).
-`dictionary.py export --from easy.md` drafts the glossary section from the entries found.
+dictionary first, then the shared public-sector dictionary, then the global ones), each
+with the sentence it stands in, and the long words nobody has explained yet. The match
+is lexical: it finds a word, not its meaning. So read every hit in its sentence and
+record a verdict for this text:
+
+```
+python <skill>/scripts/dictionary.py decide "<term>" used|rewritten|wrong-match|other-sense --text easy.md --reason "..."
+```
+
+- `used`: the dictionary's explanation fits; reuse it (in your own words for a Hurraki
+  entry, whose licence would otherwise travel into the customer's text).
+- `rewritten`: the right term, but you explain it in your own words for this reader.
+- `wrong-match`: the word in the text is not the term at all ("kde práve ste" is not
+  "práva"). Name the word with `--form` when several matched. This also saves a personal
+  exclusion in the user's dictionary and writes `work/dictionary-proposals.md`, a note
+  proposing the same exclusion to the shared repository. A shared exclusion would be a
+  global change, and for some bodies the match may still be right, so tell the user about
+  the proposal at the end and never submit it unasked.
+- `other-sense`: the term is right, but this body uses it in another sense. Write your
+  own explanation. With the user's agreement it can be kept for this body only:
+  `dictionary.py add "<term>" --easy "..." --scope minv.sk`.
+
+A text's scope is the host of its source address (`source:` in the front matter,
+www.minv.sk becomes minv.sk), plus any `scope:` line there or `--scope`. Entries with a
+scope are offered only to texts with the same scope; entries without one apply
+everywhere. When two entries share a term, decide each by the id the lookup shows. An
+entry marked `draft` is a proposal, not a reader-checked text.
+`dictionary.py export --from easy.md` drafts the glossary section from the entries found
+and leaves out the ones judged `wrong-match` or `other-sense`.
 When the user says "zapamätaj si toto vysvetlenie", "pridaj do slovníka" or asks you to
 remember a word, save it with `dictionary.py add "<term>" --easy "<sentence>
 <sentence>"`;
@@ -167,7 +190,8 @@ python <skill>/scripts/check.py easy.md --json work/check.json
 ```
 
 Fix what is real. Keep what is deliberate (an official name that is a Roman numeral, a
-term the reader will meet) and say why in the report. Then run the Inclusion Europe
+term the reader will meet) and say why in the report. A dictionary hit without a verdict
+is a warning: go back to step 6 and decide it. Then run the Inclusion Europe
 checklist (`references/easy-to-read-checklist-en.md`) by reading: is the main
 information easy to find, is each paragraph one topic, are examples used, are hard words
 explained every time, is it clear who "he" or "she" is. Read the text aloud in your
@@ -180,7 +204,8 @@ input block from `work/input.md`: the type of input, the URL written out in full
 visible text, not hidden behind link words) or the file name as received, the title,
 when it was fetched or processed, and which part was used. `build.py` refuses a report
 that does not show the URL or the file name. The source map and the
-open questions come from your notes in step 3; the image brief from step 7; the review
+open questions come from your notes in step 3; the hard-words section carries the verdict
+table from `dictionary.py verdicts --text easy.md --markdown`; the image brief from step 7; the review
 guide and the reader-check protocol from `references/review-and-validation.md`,
 rendered in the customer's language and naming the organisations in their country;
 the layout section repeats the Word overrides that `build.py` prints. The report is
@@ -200,7 +225,11 @@ conformant, say so in the report and do not claim PDF/UA.
 Copy the work folder into `out/zdroj/`. Then tell the user, in a few lines: where the
 package is, which formats it holds, how many open questions the report lists and the
 three most important, and that the text may not be labelled easy-to-read before the
-reader check. Do not paste the whole text into the chat unless asked.
+reader check. If `work/dictionary-proposals.md` exists, add one line: which shared
+entries matched words they are not, that a personal exclusion was saved, and that a
+shared exclusion would be a global change the user may propose (`dictionary.py exclusions
+--proposal`, or `--issue`) but which some bodies might not want. Do not paste the whole
+text into the chat unless asked.
 
 ## Language notes
 

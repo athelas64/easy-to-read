@@ -196,11 +196,13 @@ def analyse(md: str, lang: str, max_words: int, max_sent: int) -> dict:
     return {"lang": lang, "stats": stats, "open_items": open_items, "findings": findings, "passed": passed}
 
 
-def add_dictionary_findings(md: str, lang: str, r: dict) -> None:
-    """Info findings for words that a dictionary (user, public, global) already explains,
-    once per term at its first occurrence. dictionary.py lookup prints the explanations."""
+def add_dictionary_findings(md: str, lang: str, r: dict, easy: str = "", work: str | None = None,
+                            scope: list[str] | None = None) -> None:
+    """Findings for words that a dictionary (user, public, global) explains, once per term at
+    its first occurrence. A match is lexical, so every hit needs a verdict for this text
+    (dictionary.py decide): a hit without one is a warning, a decided hit is info."""
     try:
-        from dictionary import find_in_text, load_tiers
+        from dictionary import decisions_path, find_in_text, job_scopes, load_decisions, load_tiers, verdict_for
     except ImportError:
         return
     try:
@@ -209,17 +211,28 @@ def add_dictionary_findings(md: str, lang: str, r: dict) -> None:
         return
     if not tiers:
         return
-    hits = find_in_text(md, tiers)
+    hits = find_in_text(md, tiers, job_scopes(md, scope))
     if not hits:
         return
+    decisions = load_decisions(decisions_path(easy or "easy.md", work), easy or None)["decisions"]
+    undecided = 0
     for h in hits:
         best = h["tiers"][0]
-        r["findings"].append((h["lines"][0], "dictionary", "info",
-                              f"'{h['term']}' has an explanation in the {best['tier']} dictionary "
-                              f"({best['entry'].get('status', 'draft')}); explain the word where it first occurs, "
-                              "or reuse the entry (dictionary.py lookup)"))
+        v = verdict_for(h, decisions)
+        where = f"the {best['tier']} dictionary ({best['entry'].get('status', 'draft')})"
+        if v:
+            r["findings"].append((h["lines"][0], "dictionary", "info",
+                                  f"'{h['term']}' in {where}: verdict {v['verdict']}"))
+        else:
+            undecided += 1
+            r["findings"].append((h["lines"][0], "dictionary", "warn",
+                                  f"'{h['term']}' matched '{h['occurrences'][0]['form']}' ({where}) and has no verdict: "
+                                  "read it in its sentence, then dictionary.py decide TERM used|rewritten|wrong-match|other-sense"))
     r["findings"].sort(key=lambda f: (f[0], f[1]))
     r["stats"]["dictionary_terms"] = len(hits)
+    r["stats"]["dictionary_without_verdict"] = undecided
+    if not undecided:
+        r["passed"].append("every dictionary hit has a verdict")
 
 
 def render(path: str, r: dict) -> str:
@@ -265,6 +278,8 @@ def main() -> None:
     ap.add_argument("--max-words", type=int, help="words per sentence (default sk/cs 15, en 20)")
     ap.add_argument("--max-sentences", type=int, help="sentences per paragraph (default 5)")
     ap.add_argument("--no-dictionary", action="store_true", help="do not look the text up in the dictionaries")
+    ap.add_argument("--work", help="work folder with dictionary-decisions.json (default: work next to the text)")
+    ap.add_argument("--scope", action="append", help="body or topic of the text, besides the source address")
     a = ap.parse_args()
     lang = a.lang
     if not lang:
@@ -277,7 +292,7 @@ def main() -> None:
     md = read_text(a.easy)
     r = analyse(md, lang, a.max_words or mw, a.max_sentences or ms)
     if not a.no_dictionary:
-        add_dictionary_findings(md, lang, r)
+        add_dictionary_findings(md, lang, r, a.easy, a.work, a.scope)
     print(render(a.easy, r))
     if a.json:
         write_text(a.json, json.dumps({

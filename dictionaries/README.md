@@ -18,5 +18,7 @@ in `%LOCALAPPDATA%\easy-to-read\dictionaries\` and win by `version`.
 `~/.local/share/easy-to-read/user-<lang>.json`), created by the first
 `dictionary.py add`, or the file named by the environment variable `ETR_USER_DICT`.
 It lives outside the skill so that reinstalling the skill cannot delete it.
+Besides your entries (some may carry a `scope`, such as `minv.sk`) it keeps your
+personal `exclusions`: word forms that matched an entry but are a different word.
 
 Full description: `references/dictionaries.md`.
