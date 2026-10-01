@@ -265,8 +265,9 @@ text into the chat unless asked.
   image-brief table, the easy-to-read mark.
 - `references/review-and-validation.md`: the expert review, the reader-check protocol,
   the delivery-format checks, the record sheet.
-- `references/dictionaries.md`: the three dictionaries of hard words (user, public
-  sector, Hurraki), `scripts/dictionary.py`, the entry schema, updates and licences.
+- `references/dictionaries.md`: the three tiers of dictionaries of hard words (user,
+  public sector, global: Hurraki and Inclusion Europe), `scripts/dictionary.py`, the
+  verdicts, scope and exclusions, the entry schema, updates and licences.
 - `references/information-for-all-en.md`, `-sk.md`, `-cs.md`: the European standards
   (Inclusion Europe, "Information for all"), machine-converted from the PDFs; the
   numbered rules are authoritative, the layout of the conversion is not.

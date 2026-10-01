@@ -19,11 +19,13 @@ Three places are read. The first two hold the shared tiers, the third the user's
 <skill>/dictionaries/                      shipped with the skill (read-only snapshot)
     verejna-sprava-sk.json                 public tier, Slovak
     hurraki-sk.json                        global tier, Slovak
+    inclusion-europe-sk.json               global tier, Slovak
     sources.json                           which repository `update` polls
 
 %LOCALAPPDATA%\easy-to-read\dictionaries\  downloaded updates (Windows)
     verejna-sprava-sk.json                 newer copies of the shipped files, same names
     hurraki-sk.json
+    inclusion-europe-sk.json
     state.json                             when the repository was last checked
     *.bak                                  the previous copy of each replaced file
 
@@ -163,7 +165,7 @@ is the dictionary's term, and whether the explanation fits this body, is a judge
 The skill makes that judgement explicit and keeps a record of it.
 
 **Verdicts, per text.** `lookup` shows every hit with the sentence it stands in. For
-each, `decide` records one of four verdicts in `work/dictionary-decisions.json`:
+each, `decide` records one of five verdicts in `work/dictionary-decisions.json`:
 
 | Verdict | Slovak in the report | Meaning | What else happens |
 |---|---|---|---|
