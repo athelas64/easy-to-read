@@ -1,6 +1,6 @@
 ---
 name: easy-to-read
-description: Write, convert or review text in Easy-to-Read (Slovak ľahko čitateľný text, Czech snadné čtení, UK Easy Read, German Leichte Sprache) for people with intellectual disabilities, following the Inclusion Europe "Information for all" standards and the Czech Easy-to-Read methodology, and hand it over as a customer package - the easy text returned in the source's own format (a Word file styled like theirs, an HTML fragment in their site's markup, or a tagged accessible PDF, plus Markdown) and a companion report that states the input (URL or file) and holds the source map, the information the customer still has to add, an image brief, a review guide and the reader-check protocol. Use this whenever the user mentions easy-to-read, easy read, ETR, ľahko čitateľný, ľahká verzia, snadné čtení, zjednodušený text, Leichte Sprache, comprehensibility or zrozumiteľnosť for people with intellectual or cognitive disabilities, or asks to simplify a web page, a PDF, a letter, a leaflet or a form's instructions for seniors or people who struggle with reading, even when they never say "easy-to-read".
+description: Write, convert or review text in Easy-to-Read (Slovak ľahko čitateľný text, Czech snadné čtení, UK Easy Read, German Leichte Sprache) for people with intellectual disabilities, following the Inclusion Europe "Information for all" standards and the Czech Easy-to-Read methodology, and hand it over as a customer package - the easy text returned in the source's own format (Word styled like theirs, an HTML fragment in their markup, or a tagged PDF, plus Markdown) and a companion report with the input (URL or file), the source map, the information still to add, an image brief, a review guide and the reader-check protocol. Use whenever the user mentions easy-to-read, easy read, ETR, ľahko čitateľný, ľahká verzia, snadné čtení, zjednodušený text, Leichte Sprache, comprehensibility or zrozumiteľnosť for people with intellectual or cognitive disabilities, or asks to simplify a web page, PDF, letter, leaflet or form instructions for seniors or people who struggle with reading, even when they never say "easy-to-read".
 ---
 
 # Easy-to-Read
@@ -50,6 +50,14 @@ language, and where it will live. Then work; the report is where open questions 
 `python` below means the skill's own interpreter when it has one:
 `<skill>/runtime/python/python.exe` in the offline Windows distribution, which also
 carries pandoc and the Python packages. Otherwise the system Python 3.10+.
+
+**On claude.ai** the skill folder is copied into the code-execution sandbox: `<skill>` is that folder and
+`python` is `python3` (`pip install beautifulsoup4 lxml markdownify pdfminer.six` for what is missing). When
+pandoc or typst is not installed, the scripts download the official Linux release from GitHub; if the sandbox
+cannot reach GitHub, a PDF source comes back as Word and Markdown instead of a tagged PDF, and the report says
+so. `dictionary.py` uses the bundled dictionaries when its refresh fails, and the user's own words do not
+survive the conversation, so hand them back as a file with the package. The converted Inclusion Europe
+standards are left out of the claude.ai copy (see the references list).
 
 ### 1. Bring the source in
 
@@ -270,7 +278,10 @@ text into the chat unless asked.
   verdicts, scope and exclusions, the entry schema, updates and licences.
 - `references/information-for-all-en.md`, `-sk.md`, `-cs.md`: the European standards
   (Inclusion Europe, "Information for all"), machine-converted from the PDFs; the
-  numbered rules are authoritative, the layout of the conversion is not.
+  numbered rules are authoritative, the layout of the conversion is not. Internal copies
+  only: every distributed copy leaves them out (the offline installer built with
+  `--exclude-standards`, the claude.ai upload). Without them, work from the rules in this
+  file, the checklist and the standards page below.
 - `references/easy-to-read-checklist-en.md`: the Inclusion Europe checklist.
 - `references/cz-metodika-easy-to-read.md`: the Czech Ministry of the Interior
   methodology (plain language part I, Easy to Read part II with the numeric limits).
