@@ -1,6 +1,7 @@
 ---
 name: easy-to-read
 description: Write, convert or review text in Easy-to-Read (Slovak ľahko čitateľný text, Czech snadné čtení, UK Easy Read, German Leichte Sprache) for people with intellectual disabilities, following the Inclusion Europe "Information for all" standards and the Czech Easy-to-Read methodology, and hand it over as a customer package - the easy text returned in the source's own format (Word styled like theirs, an HTML fragment in their markup, or a tagged PDF, plus Markdown) and a companion report with the input (URL or file), the source map, the information still to add, an image brief, a review guide and the reader-check protocol. Use whenever the user mentions easy-to-read, easy read, ETR, ľahko čitateľný, ľahká verzia, snadné čtení, zjednodušený text, Leichte Sprache, comprehensibility or zrozumiteľnosť for people with intellectual or cognitive disabilities, or asks to simplify a web page, PDF, letter, leaflet or form instructions for seniors or people who struggle with reading, even when they never say "easy-to-read".
+license: CC BY-NC-SA 4.0 for the author's files; third-party reference texts under their originators' terms (see LICENSE)
 ---
 
 # Easy-to-Read
@@ -291,3 +292,10 @@ text into the chat unless asked.
 - Standards page to link wherever Easy-to-Read is mentioned (the HTML page, never the
   PDFs): https://www.inclusion.eu/european-standards-how-to-use-easy-to-read
 - Logo rules: https://easy-to-read.inclusion-europe.eu/european-logo/
+
+## Licence
+
+The author's files (SKILL.md, scripts, the public-administration dictionary tier) are CC BY-NC-SA 4.0; the
+reference conversions in `references/` and the adapted dictionaries keep their originators' terms. Details and the
+takedown contact: `LICENSE`. Cite as: Regec, M. (2026). *easy-to-read: nástroj na tvorbu ľahko čitateľných textov
+s podporou jazykového modelu.* https://github.com/athelas64/easy-to-read
