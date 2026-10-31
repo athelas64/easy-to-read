@@ -1,0 +1,52 @@
+Licencie / Licences
+===================
+
+Výskumný projekt zverejnený na účel hodnotenia / Research project published for evaluation
+---------------------------------------------------------------------------------------
+Tento repozitár je výstup výskumu ľahko čitateľného jazyka na Filozofickej fakulte Univerzity
+Komenského v Bratislave: nástroj (skill) na tvorbu, prevod a posudzovanie ľahko čitateľných
+textov s podporou jazykového modelu. Je zverejnený na účel hodnotenia overovacieho prototypu
+odbornou verejnosťou a verejnou správou. Pripomienky, opravy a žiadosti o stiahnutie obsahu
+(takedown) posielajte na milan.regec@uniba.sk; oprávnenej žiadosti vyhovieme bez zbytočného
+odkladu.
+
+This repository is an output of research into easy-to-read language at the Faculty of Arts,
+Comenius University Bratislava: a skill (tool) for writing, converting and reviewing
+easy-to-read texts with a language model. It is published so that the prototype can be
+evaluated by experts and public bodies. Comments, corrections and takedown requests:
+milan.regec@uniba.sk.
+
+Vlastné dielo autora / The author's own work
+--------------------------------------------
+SKILL.md, scripts/*, references/customer-package.md, references/dictionaries.md,
+references/formats.md, references/government-practice-survey.md, references/images.md,
+references/review-and-validation.md a dictionaries/verejna-sprava-sk.json:
+
+  © 2026 Milan Regec, Filozofická fakulta Univerzity Komenského v Bratislave.
+  Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0),
+  https://creativecommons.org/licenses/by-nc-sa/4.0/
+  Uvádzajte / attribute as: Regec, M. (2026). easy-to-read: nástroj na tvorbu ľahko čitateľných
+  textov s podporou jazykového modelu. https://github.com/athelas64/easy-to-read
+
+Prevzaté diela / Third-party works
+----------------------------------
+Rozhodujúce sú podmienky pôvodcov; strojové prevody do Markdownu slúžia nástroju ako
+referenčné texty a pri rozpore platí pôvodný dokument. / The originators' terms govern; the
+Markdown conversions serve the tool as reference texts and the original documents prevail.
+
+- references/information-for-all-en.md, -cs.md, -sk.md: Inclusion Europe (with SPMP ČR,
+  ZPMP v SR), "Information for all. European standards for making information easy to read
+  and understand", https://www.inclusion-europe.eu/ (EN, CZ and SK PDFs). © Inclusion Europe.
+- references/easy-to-read-checklist-en.md: Inclusion Europe, "Easy-to-read checklist",
+  https://www.inclusion-europe.eu/wp-content/uploads/2020/06/Easy-to-read-checklist-Inclusion-Europe.pdf.
+  © Inclusion Europe.
+- references/cz-metodika-easy-to-read.md, -priklady.md: Vláda České republiky, Vládní výbor pro
+  osoby se zdravotním postižením, "Metodika Easy to Read",
+  https://vlada.gov.cz/cz/ppov/vvozp/dokumenty/metodika-easy-to-read-174932/.
+- dictionaries/hurraki-sk.json: Slovak adaptation of Hurraki (https://hurraki.de/),
+  CC BY-SA 3.0, https://creativecommons.org/licenses/by-sa/3.0/.
+- dictionaries/inclusion-europe-sk.json: Slovak translation of the Inclusion Europe
+  easy-to-read dictionary, CC BY-NC-SA 4.0; see the "licence" block in the file.
+
+Pri každom súbore slovníka je rozhodujúci jeho blok "licence". / For every dictionary file,
+its own "licence" block governs.
